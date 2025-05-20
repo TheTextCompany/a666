@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Interpreter
+comment0.text=\r\n\ Schnittstelle\ zum\ Interpretieren\ von\ XML\ Spieldateien.\r\n\ \r\n\ @author\r\n
 comment1.params=
 comment1.target=Interpreter()
 numComments=2

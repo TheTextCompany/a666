@@ -3,10 +3,9 @@ package com.freakurl.a666;
 import com.freakurl.engine.FreakEngine;
 
 /**
- * Main game class.
+ * Haupt Spiel-Klasse.
  * 
- * @author Test
- * @author Reez4340
+ * @author
  */
 public class Game {
     FreakEngine e = new FreakEngine();

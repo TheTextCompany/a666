@@ -1,8 +1,8 @@
 package com.freakurl.a666;
 
 /**
- * Base Klasse für Renderer.
+ * Grund-Klasse für Renderer.
  * 
- * @author JHubi1
+ * @author
  */
 public interface Renderer {}
