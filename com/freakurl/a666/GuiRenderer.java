@@ -8,5 +8,7 @@ package com.freakurl.a666;
 public class GuiRenderer implements Renderer {
     Game game;
     
+    SoundRenderer s = new SoundRenderer();
+    
     public GuiRenderer() {}
 }
