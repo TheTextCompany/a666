@@ -16,7 +16,7 @@ public class FreakEngine {
     Characters c = new Characters();
     Storage s = new Storage();
     
-    ArrayList<Event> events = new ArrayList<Event>();
+    Routine r = new Routine();
     
     public FreakEngine() {}
 }
