@@ -8,28 +8,28 @@
     </imports>
 
     <frames>
-        <frame id="f0" author="Jakob">
+        <frame id="0" author="Jakob">
             <title>A666</title>
             <text>
                 Title screen
             </text>
-            <image src="f0.png" />
+            <image src="0.png" />
             <options>
-                <option to="f1" style="greyed shining shaking">Start</option>
+                <option to="1" style="greyed shining shaking">Start</option>
             </options>
             <special>
-                <nameInput to="f1" />
+                <nameInput to="1" />
             </special>
         </frame>
-        <frame id="f1">
+        <frame id="1">
             <title>The Beginning</title>
             <text>
                 Once upon a time, in a land far away, ...
             </text>
-            <image src="f1.png" />
-            <sound src="f1.mp3" />
+            <image src="1.png" />
+            <sound src="1.mp3" />
             <options>
-                <option to="f1">Weiter</option>
+                <option to="1">Weiter</option>
             </options>
         </frame>
     </frames>

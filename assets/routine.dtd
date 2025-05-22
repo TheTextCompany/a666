@@ -15,7 +15,7 @@
 
 <!ELEMENT frames (frame+)>
 <!ELEMENT frame (title, text, image?, sound?, options, special?)>
-<!ATTLIST frame id ID #REQUIRED
+<!ATTLIST frame id CDATA #REQUIRED
             author CDATA #IMPLIED
 >
 
@@ -25,10 +25,10 @@
 <!ELEMENT special (nameInput?)>
 
 <!ELEMENT option (#PCDATA)>
-<!ATTLIST option to IDREF #REQUIRED
+<!ATTLIST option to CDATA #REQUIRED
             default CDATA #FIXED "default"
             style NMTOKENS #IMPLIED
 >
 
 <!ELEMENT nameInput EMPTY>
-<!ATTLIST nameInput to IDREF #REQUIRED>
+<!ATTLIST nameInput to CDATA #REQUIRED>
