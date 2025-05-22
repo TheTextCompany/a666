@@ -1,0 +1,34 @@
+<!-- ROUTINE DTD Definition -->
+<!-- Schwierig zu verstehen, besser nicht anfassen -->
+
+<!ELEMENT sound EMPTY>
+<!ATTLIST sound src CDATA #REQUIRED>
+<!ELEMENT image EMPTY>
+<!ATTLIST image src CDATA #REQUIRED>
+
+<!ELEMENT routine (summary, sound?, imports?, frames)>
+<!ELEMENT summary (#PCDATA)>
+
+<!ELEMENT imports (import*)>
+<!ELEMENT import EMPTY>
+<!ATTLIST import src CDATA #REQUIRED>
+
+<!ELEMENT frames (frame+)>
+<!ELEMENT frame (title, text, image?, sound?, options, special?)>
+<!ATTLIST frame id ID #REQUIRED
+            author CDATA #IMPLIED
+>
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT options (option+)>
+<!ELEMENT special (nameInput?)>
+
+<!ELEMENT option (#PCDATA)>
+<!ATTLIST option to IDREF #REQUIRED
+            default CDATA #FIXED "default"
+            style NMTOKENS #IMPLIED
+>
+
+<!ELEMENT nameInput EMPTY>
+<!ATTLIST nameInput to IDREF #REQUIRED>

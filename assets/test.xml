@@ -1,0 +1,36 @@
+<!DOCTYPE routine SYSTEM "routine.dtd">
+<routine>
+    <summary>Du findest ein mysteriöses Logbuch in deinem Spind</summary>
+    <sound src="bg.mp3" />
+
+    <imports>
+        <import src="endings/e1.xml" />
+    </imports>
+
+    <frames>
+        <frame id="f0" author="Jakob">
+            <title>A666</title>
+            <text>
+                Title screen
+            </text>
+            <image src="f0.png" />
+            <options>
+                <option to="f1" style="greyed shining shaking">Start</option>
+            </options>
+            <special>
+                <nameInput to="f1" />
+            </special>
+        </frame>
+        <frame id="f1">
+            <title>The Beginning</title>
+            <text>
+                Once upon a time, in a land far away, ...
+            </text>
+            <image src="f1.png" />
+            <sound src="f1.mp3" />
+            <options>
+                <option to="f1">Weiter</option>
+            </options>
+        </frame>
+    </frames>
+</routine>
