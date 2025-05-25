@@ -57,7 +57,7 @@ public class FrameOption {
         
         ArrayList<FrameOptionStyle> styleParsed = new ArrayList<FrameOptionStyle>();
         for (var i = 0; i < style.length; i++) {
-            if (style[i].trim() != "") {
+            if (!style[i].trim().isEmpty()) {
                 try {
                     styleParsed.add(FrameOptionStyle.valueOf(style[i]));
                 } catch (Exception e) {}
