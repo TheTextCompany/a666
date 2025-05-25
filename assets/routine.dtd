@@ -14,7 +14,7 @@
 <!ATTLIST import src CDATA #REQUIRED>
 
 <!ELEMENT frames (frame+)>
-<!ELEMENT frame (title, text, image?, sound?, options, special?)>
+<!ELEMENT frame (title, text, image?, sound?, options)>
 <!ATTLIST frame id CDATA #REQUIRED
             author CDATA #IMPLIED
 >
@@ -22,13 +22,9 @@
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT text (#PCDATA)>
 <!ELEMENT options (option+)>
-<!ELEMENT special (nameInput?)>
 
 <!ELEMENT option (#PCDATA)>
 <!ATTLIST option to CDATA #REQUIRED
-            default CDATA #FIXED "default"
+            default CDATA #IMPLIED
             style NMTOKENS #IMPLIED
 >
-
-<!ELEMENT nameInput EMPTY>
-<!ATTLIST nameInput to CDATA #REQUIRED>

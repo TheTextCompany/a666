@@ -4,7 +4,7 @@
     <sound src="bg.mp3" />
 
     <imports>
-        <import src="endings/e1.xml" />
+        <import src="e1.xml" />
     </imports>
 
     <frames>
@@ -15,11 +15,8 @@
             </text>
             <image src="0.png" />
             <options>
-                <option to="1" style="greyed shining shaking">Start</option>
+                <option to="1" style="greyed shining shaking" default="default">Start</option>
             </options>
-            <special>
-                <nameInput to="1" />
-            </special>
         </frame>
         <frame id="1">
             <title>The Beginning</title>

@@ -1,9 +1,9 @@
 package com.freakurl.engine;
 
 /**
- * Exception, die geschmissen wird, sollte die Engine stolpern.
+ * Exception, die geschmissen wird, wenn in der Engine ein Fehler auftritt.
  * 
- * @author
+ * @author Jakob
  */
 public class EngineException extends Exception {
     public EngineException() {};
