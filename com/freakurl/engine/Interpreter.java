@@ -119,7 +119,7 @@ public class Interpreter {
                 final String image = (imageNode != null) ? imageNode.getAttributes().getNamedItem("src").getTextContent() : null;
                 
                 Node optionsNode = getChildElementByTagName(frame, "options");
-                if (framesNode == null) {
+                if (optionsNode == null) {
                     throw new EngineException("Document didn't include ROUTINE.FRAMES[" + i + "].OPTIONS element");
                 }
                 
