@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Routine
-comment0.text=\r\n\ Container-Klasse\ f\u00FCr\ Game-Assets.\r\n\ \r\n\ @author\r\n
-comment1.params=
-comment1.target=Routine()
+comment0.text=\r\n\ Container-Klasse\ f\u00FCr\ Game-Assets.\r\n\ \r\n\ @author\ Jakob\r\n
+comment1.params=summary\ parent\ sound\ frames
+comment1.target=Routine(java.lang.String,\ java.lang.String,\ java.lang.String,\ Frame[])
 numComments=2

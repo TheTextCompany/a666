@@ -1,0 +1,13 @@
+<!DOCTYPE routine SYSTEM "routine.dtd">
+<routine>
+    <summary>Frames for Ending 1</summary>
+    <frames>
+        <frame id="2">
+            <title>Test E1</title>
+            <text>There once was a shit ...</text>
+            <options>
+                <option to="0">Ende</option>
+            </options>
+        </frame>
+    </frames>
+</routine>

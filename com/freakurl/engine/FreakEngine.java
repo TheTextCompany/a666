@@ -1,22 +1,21 @@
 package com.freakurl.engine;
 
-import java.util.ArrayList;
-import java.util.logging.Logger;
-
 /**
- * Hauptengine des Projekts.
+ * Haupt-Engine des Projekts.
  * 
  * @author Jakob
  */
-public class FreakEngine {
-    public final Logger logger = Logger.getLogger("game");
-    final Logger loggerInternal = Logger.getLogger(FreakEngine.class.getName());
+public class FreakEngine {    
+    final Routine r;
     
-    Interpreter i = new Interpreter();
     Characters c = new Characters();
     Storage s = new Storage();
     
-    Routine r = new Routine();
-    
-    public FreakEngine() {}
+    public FreakEngine() throws EngineException {
+        try {
+            r = Interpreter.loadRoutine();
+        } catch (Exception e) {
+            throw new EngineException("Unable to get asset directory: " + e.getMessage());
+        }
+    }
 }

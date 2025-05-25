@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=FrameOption
+comment0.text=\r\n\ Container-Klasse\ f\u00FCr\ eine\ Frame-Option.\r\n\ \r\n\ @author\ Jakob\r\n
+comment1.params=to\ isDefault\ style\ body
+comment1.target=FrameOption(int,\ boolean,\ java.lang.String[],\ java.lang.String)
+numComments=2
