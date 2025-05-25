@@ -77,7 +77,6 @@ public class Interpreter {
             throw new EngineException("Document didn't include ROUTINE.FRAMES element");
         }
         
-        ArrayList<Integer> usedIds = new ArrayList<Integer>();
         ArrayList<Frame> frames = new ArrayList<Frame>();
         NodeList framesChildren = framesNode.getChildNodes();
 
@@ -92,7 +91,6 @@ public class Interpreter {
                 }
                 try {
                     id = Integer.parseInt(idAttribute.getTextContent());
-                    usedIds.add(id);
                 } catch (Exception e) {
                     throw new EngineException("Invalid value at ROUTINE.FRAMES[" + i + "].ID: " + e.getMessage());
                 }
