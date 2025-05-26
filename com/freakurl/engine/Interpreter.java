@@ -1,7 +1,6 @@
 package com.freakurl.engine;
 
 import java.io.File;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Optional;
 import javax.xml.parsers.*;
@@ -44,7 +43,6 @@ public class Interpreter {
      * @return Die geparste {@link Routine} mit allen {@link Frame}s.
      */
     static Routine loadRoutine(String parent, String name) throws EngineException {
-        System.out.println(parent);
         File f = (new File(parent, name)).getAbsoluteFile();
         
         Document doc;
