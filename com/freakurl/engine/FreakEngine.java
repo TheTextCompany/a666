@@ -25,4 +25,8 @@ public class FreakEngine {
             throw new EngineException("Unable to get asset directory: " + e.getMessage());
         }
     }
+    
+    int crash() {
+        return crash();
+    }
 }
