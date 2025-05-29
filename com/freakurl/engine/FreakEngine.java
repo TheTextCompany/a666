@@ -26,7 +26,15 @@ public class FreakEngine {
         }
     }
     
-    int crash() {
-        return crash();
+    /**
+     * Crasht die Engine durch einen {@link StackOverflowError}.
+     * 
+     * <p>
+     * Besser nicht aufrufen, wenn nicht gewollt.
+     * <br>Ist eigentlich nur als Witz gedacht
+     * </p>
+     */
+    public void crash() {
+        crash();
     }
 }
