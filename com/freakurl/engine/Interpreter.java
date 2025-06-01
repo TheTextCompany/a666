@@ -19,13 +19,13 @@ public class Interpreter {
      * 
      * @see Interpreter#loadRoutine(parent, name)
      * 
-     * @param dir Ein absoluter Pfad zum übergeordneten Verzeichnis.
+     * @param parent Ein absoluter Pfad zum übergeordneten Verzeichnis.
      * @param name Dateiname mit Dateiendung im Verzeichnis {@code parent}.
      * @throws EngineException Wird ausgelöst, sollte der Ordner oder die Datei nicht existieren, die Datei nicht richtig formatiert sein oder diese einen nicht-evaluierbaren Wert enthalten. Siehe {@link EngineException#getMessage()} für mehr Details.
      * @return Die geparste {@link Routine} mit allen {@link Frame}s.
      */
-    static Routine loadRoutine() throws EngineException {
-        return loadRoutine("assets", "main.xml");
+    static Routine loadRoutine(String parent) throws EngineException {
+        return loadRoutine(parent + "assets", "main.xml");
     };
     
     /**

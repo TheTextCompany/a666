@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=EngineException
-comment0.text=\r\n\ Exception,\ die\ geschmissen\ wird,\ sollte\ die\ Engine\ stolpern.\r\n\ \r\n\ @author\r\n
+comment0.text=\r\n\ Exception,\ die\ geschmissen\ wird,\ wenn\ in\ der\ Engine\ ein\ Fehler\ auftritt.\r\n\ \r\n\ @author\ Jakob\r\n
 comment1.params=
 comment1.target=EngineException()
 comment2.params=message
