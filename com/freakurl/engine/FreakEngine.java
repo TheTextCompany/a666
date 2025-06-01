@@ -25,4 +25,16 @@ public class FreakEngine {
             throw new EngineException("Unable to get asset directory: " + e.getMessage());
         }
     }
+    
+    /**
+     * Crasht die Engine durch einen {@link StackOverflowError}.
+     * 
+     * <p>
+     * Besser nicht aufrufen, wenn nicht gewollt.
+     * <br>Ist eigentlich nur als Witz gedacht
+     * </p>
+     */
+    public void crash() {
+        crash();
+    }
 }
