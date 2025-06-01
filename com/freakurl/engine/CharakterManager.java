@@ -20,7 +20,6 @@ public class CharakterManager {
     static void createCharakter(String id, String name, String imagePath) throws EngineException {
         for(int i = 0; i < charakterArray.size(); i++) {
             if(charakterArray.get(i).id.equals(id)) {
-                
                 throw new EngineException("Failed to create Charakter with ID: " + id + "; already exists");
             }
         }
