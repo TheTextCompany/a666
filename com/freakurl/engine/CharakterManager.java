@@ -18,7 +18,6 @@ public class CharakterManager {
      * @throws EngineException Wird geschmissen, wenn versucht wird eine ID mehrmals zu vergeben.
      */
     static void createCharakter(String id, String name, String imagePath) throws EngineException {
-        
         for(int i = 0; i < charakterArray.size(); i++) {
             if(charakterArray.get(i).id.equals(id)) {
                 
@@ -37,7 +36,6 @@ public class CharakterManager {
      * @throws EngineExeption Wird geschmissen, wenn kein Charakter mit der jeweiligen ID im Array existiert.
      */
     static Charakter getCharakter(String id) throws EngineException {
-    
         for(int i = 0; i < charakterArray.size(); i++) {
             if(id.equals(charakterArray.get(i).id)) {
                 return charakterArray.get(i);
