@@ -6,5 +6,5 @@ comment1.target=void\ createCharakter(java.lang.String,\ java.lang.String,\ java
 comment1.text=\n\ Erstellt\ ein\ Charakter\ Objekt\ mit\ den\ \u00FCbergebenen\ Parametern.\n\n\ @param\ id\ Text-ID\ eines\ Charakters.\n\ @param\ name\ Der\ Name\ des\ Charakters.\n\ @param\ imagePath\ Der\ Dateipfad\ zu\ dem\ Bild/Grafik\ des\ Charakters.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ versucht\ wird\ eine\ ID\ mehrmals\ zu\ vergeben.\n
 comment2.params=id
 comment2.target=Charakter\ getCharakter(java.lang.String)
-comment2.text=\n\ Gibt\ den\ Charakter\ mit\ der\ jeweiligen\ ID\ zur\u00FCck.\n\ \n\ @param\ id\ ID\ des\ jeweiligen\ Charakter\ Objektes,\ das\ zur\u00FCckgegeben\ werden\ soll.\n\ @return\ Charakter\ Der\ angeforderte\ Charakter.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ kein\ Charakter\ mit\ der\ jeweiligen\ ID\ im\ Array\ existiert.\n
+comment2.text=\n\ Gibt\ den\ Charakter\ mit\ der\ jeweiligen\ ID\ zur\u00FCck.\n\ \n\ @param\ id\ ID\ des\ jeweiligen\ Charakter\ Objektes,\ das\ zur\u00FCckgegeben\ werden\ soll.\n\ @return\ Charakter\ Der\ angeforderte\ Charakter.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ kein\ Charakter\ mit\ der\ jeweiligen\ ID\ im\ Speicher\ existiert.\n
 numComments=3
