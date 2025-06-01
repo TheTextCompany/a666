@@ -7,12 +7,12 @@ import java.util.ArrayList;
  * @author Julian Hack
  */
 public class CharakterManager {
-    static ArrayList<Charakter> charakterArray = new ArrayList<>();
+   private static ArrayList<Charakter> charakterArray = new ArrayList<>();
 
     /**
      * Erstellt ein Charakter Objekt mit den übergebenen Parametern.
      *
-     * @param id Text-Id eines Charakters.
+     * @param id Text-ID eines Charakters.
      * @param name Der Name des Charakters.
      * @param imagePath Der Dateipfad zu dem Bild/Grafik des Charakters.
      * @throws EngineException Wird geschmissen, wenn versucht wird eine ID mehrmals zu vergeben.
@@ -30,7 +30,7 @@ public class CharakterManager {
     }
 
     /**
-     * Gibt den Charakter mit der jeweiligen Id zurück.
+     * Gibt den Charakter mit der jeweiligen ID zurück.
      * 
      * @param id ID des jeweiligen Charakter Objektes, das zurückgegeben werden soll.
      * @return Charakter Der angeforderte Charakter.
