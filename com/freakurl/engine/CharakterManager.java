@@ -33,12 +33,13 @@ public class CharakterManager {
      * 
      * @param id ID des jeweiligen Charakter Objektes, das zurückgegeben werden soll.
      * @return Charakter Der angeforderte Charakter.
-     * @throws EngineExeption Wird geschmissen, wenn kein Charakter mit der jeweiligen ID im Array existiert.
+     * @throws EngineException Wird geschmissen, wenn kein Charakter mit der jeweiligen ID im Array existiert.
      */
     static Charakter getCharakter(String id) throws EngineException {
         for(int i = 0; i < charakterArray.size(); i++) {
-            if(id.equals(charakterArray.get(i).id)) {
-                return charakterArray.get(i);
+            Charakter currentCharakter = charakterArray.get(i);
+            if(id.equals(currentCharakter.id)) {
+                return currentCharakter;
             }
         }
         
