@@ -8,9 +8,9 @@ package com.freakurl.engine;
  */
 public class Charakter
 {
-    String id;
-    String name;
-    String imagePath;
+    final String id;
+    final String name;
+    final String imagePath;
 
     public Charakter(String idNew, String nameNew, String imagePathNew) {
         id = idNew;
