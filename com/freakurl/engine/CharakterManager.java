@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @author Julian Hack
  */
 public class CharakterManager {
-   private static ArrayList<Charakter> charakterArray = new ArrayList<>();
+    private static ArrayList<Charakter> charakterArray = new ArrayList<>();
 
     /**
      * Erstellt ein Charakter Objekt mit den übergebenen Parametern.
@@ -22,9 +22,10 @@ public class CharakterManager {
             if(charakterArray.get(i).id.equals(id)) {
                 throw new EngineException("Failed to create Charakter with ID: " + id + "; already exists");
             }
+            
         }
-        Charakter newCharakter = new Charakter(id, name, imagePath);
-        charakterArray.add(newCharakter);
+        
+        charakterArray.add(new Charakter(id, name, imagePath));
     }
 
     /**
@@ -40,8 +41,9 @@ public class CharakterManager {
             if(id.equals(currentCharakter.id)) {
                 return currentCharakter;
             }
+            
         }
-        
+
         throw new EngineException("No Charakter registered of ID: " + id);
     }
 }
