@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author Julian Hack
  */
 public class CharakterManager {
-    private static ArrayList<Charakter> charakters= new ArrayList<>();
+    private static ArrayList<Charakter> charakters = new ArrayList<>();
 
     /**
      * Erstellt ein Charakter Objekt mit den übergebenen Parametern.
