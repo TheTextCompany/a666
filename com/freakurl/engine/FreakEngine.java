@@ -12,17 +12,31 @@ public class FreakEngine {
     Storage s = new Storage();
     
     public FreakEngine() throws EngineException {
+        String assets;
         try {
-            String jarPath = FreakEngine.class
+            assets = FreakEngine.class
               .getProtectionDomain()
               .getCodeSource()
               .getLocation()
               .toURI()
               .getPath();
-            
-            r = Interpreter.loadRoutine(jarPath);
         } catch (Exception e) {
             throw new EngineException("Unable to get asset directory: " + e.getMessage());
         }
+        
+        try {
+            r = Interpreter.loadRoutine(assets);
+        } catch (Exception e) {
+            throw new EngineException("Failed to initialize engine: " + e.getMessage());
+        }
+    }
+    
+    public Frame getFrame(int id) throws EngineException {
+        for (var i : r.frames) {
+            if (id == i.id) {
+                return i;
+            }
+        }
+        throw new EngineException("No frame registered of ID: " + id);
     }
 }
