@@ -31,6 +31,13 @@ public class FreakEngine {
         }
     }
     
+    /**
+     * Lade einen {@link Frame} mit einer {@code ID}.
+     * 
+     * @param id Die zu ladende ID.
+     * @return Der angeforderte Frame.
+     * @throws EngineException Wird geschmissen, sollte der {@link Frame} nicht existieren.
+     */
     public Frame getFrame(int id) throws EngineException {
         for (var i : r.frames) {
             if (id == i.id) {
