@@ -39,4 +39,16 @@ public class FreakEngine {
         }
         throw new EngineException("No frame registered of ID: " + id);
     }
+    
+    /**
+     * Crasht die Engine durch einen {@link StackOverflowError}.
+     * 
+     * <p>
+     * Besser nicht aufrufen, wenn nicht gewollt.
+     * <br>Ist eigentlich nur als Witz gedacht
+     * </p>
+     */
+    public void crash() {
+        crash();
+    }
 }
