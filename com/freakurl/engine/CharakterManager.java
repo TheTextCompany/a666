@@ -1,30 +1,31 @@
 package com.freakurl.engine;
+
 import java.util.ArrayList;
 
 /**
- * Klasse zum Erstellen und Abrufen von Charakter Objekten.
+ * Klasse zum Erstellen und Abrufen von Charakter-Objekten.
  * 
  * @author Julian Hack
  */
 public class CharakterManager {
-    private static ArrayList<Charakter> charakterArray = new ArrayList<>();
+    private static ArrayList<Charakter> charakters= new ArrayList<>();
 
     /**
      * Erstellt ein Charakter Objekt mit den übergebenen Parametern.
      *
      * @param id Text-ID eines Charakters.
      * @param name Der Name des Charakters.
-     * @param imagePath Der Dateipfad zu dem Bild/Grafik des Charakters.
+     * @param imagePath Der Dateipfad zum Bild des Charakters.
      * @throws EngineException Wird geschmissen, wenn versucht wird eine ID mehrmals zu vergeben.
      */
    public static void createCharakter(String id, String name, String imagePath) throws EngineException {
-        for(int i = 0; i < charakterArray.size(); i++) {
-            if(charakterArray.get(i).id.equals(id)) {
+        for(int i = 0; i < charakters.size(); i++) {
+            if(charakters.get(i).id.equals(id)) {
                 throw new EngineException("Failed to create Charakter with ID: " + id + "; already exists");
             }
         }
         
-        charakterArray.add(new Charakter(id, name, imagePath));
+        charakters.add(new Charakter(id, name, imagePath));
     }
 
     /**
@@ -35,8 +36,8 @@ public class CharakterManager {
      * @throws EngineException Wird geschmissen, wenn kein Charakter mit der jeweiligen ID im Speicher existiert.
      */
     public static Charakter getCharakter(String id) throws EngineException {
-        for(int i = 0; i < charakterArray.size(); i++) {
-            Charakter currentCharakter = charakterArray.get(i);
+        for(int i = 0; i < charakters.size(); i++) {
+            Charakter currentCharakter = charakters.get(i);
             if(id.equals(currentCharakter.id)) {
                 return currentCharakter;
             }
