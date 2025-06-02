@@ -52,7 +52,7 @@ public class FreakEngine {
      * 
      * <p>
      * Besser nicht aufrufen, wenn nicht gewollt.
-     * <br>Ist eigentlich nur als Witz gedacht
+     * <br>Ist eigentlich nur als Witz gedacht.
      * </p>
      */
     public void crash() {
