@@ -1,7 +1,7 @@
 package com.freakurl.engine;
 
 /**
- * Container-Klasse für {@code Character}s.
+ * Container-Klasse für {@link Character}s.
  * 
  * @author Julian Hack
  */
