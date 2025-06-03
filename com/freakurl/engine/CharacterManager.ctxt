@@ -1,12 +1,10 @@
 #BlueJ class context
 comment0.target=CharacterManager
 comment0.text=\n\ Klasse\ zum\ Erstellen\ und\ Abrufen\ von\ Character-Objekten.\n\ \n\ @author\ Julian\ Hack\n
-comment1.params=
-comment1.target=CharacterManager()
-comment2.params=id\ name\ presentedIn\ summary
-comment2.target=void\ createCharacter(java.lang.String,\ java.lang.String,\ java.util.Optional,\ java.util.Optional)
-comment2.text=\n\ Erstellt\ ein\ Character\ Objekt\ mit\ den\ \u00FCbergebenen\ Parametern.\n\n\ @param\ id\ Text-ID\ eines\ Characters.\n\ @param\ name\ Der\ Name\ des\ Characters.\n\ @param\ presentedIn\ Die\ Frame-ID\ in\ welcher\ der\ Character\ vorkommt.\n\ @param\ summary\ Zusatzinformationen\ zu\ dem\ Character.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ versucht\ wird\ eine\ ID\ mehrmals\ zu\ vergeben.\n
-comment3.params=id
-comment3.target=Character\ getCharacter(java.lang.String)
-comment3.text=\n\ Gibt\ den\ Character\ mit\ der\ jeweiligen\ ID\ zur\u00FCck.\n\ \n\ @param\ id\ ID\ des\ jeweiligen\ Character\ Objektes,\ das\ zur\u00FCckgegeben\ werden\ soll.\n\ @return\ Character\ Der\ angeforderte\ Character.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ kein\ Character\ mit\ der\ jeweiligen\ ID\ im\ Speicher\ existiert.\n
-numComments=4
+comment1.params=id\ name\ summary\ presentedIn
+comment1.target=void\ createCharacter(java.lang.String,\ java.lang.String,\ java.util.Optional,\ java.util.Optional)
+comment1.text=\n\ Erstellt\ ein\ Character\ Objekt\ mit\ den\ \u00FCbergebenen\ Parametern.\n\n\ @param\ id\ Text-ID\ eines\ Characters.\n\ @param\ name\ Der\ Name\ des\ Characters.\n\ @param\ summary\ Zusatzinformationen\ zu\ dem\ Character.\n\ @param\ presentedIn\ Die\ Frame-ID\ in\ welcher\ der\ Character\ vorkommt.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ versucht\ wird\ eine\ ID\ mehrmals\ zu\ vergeben.\n
+comment2.params=id
+comment2.target=Character\ getCharacter(java.lang.String)
+comment2.text=\n\ Gibt\ den\ Character\ mit\ der\ jeweiligen\ ID\ zur\u00FCck.\n\ \n\ @param\ id\ ID\ des\ jeweiligen\ Character\ Objektes,\ das\ zur\u00FCckgegeben\ werden\ soll.\n\ @return\ Character\ Der\ angeforderte\ Character.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ kein\ Character\ mit\ der\ jeweiligen\ ID\ im\ Speicher\ existiert.\n
+numComments=3
