@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 /**
- * Klasse zum Erstellen und Abrufen von Character-Objekten.
+ * Klasse zum Erstellen und Abrufen von {@link Character}-Objekten.
  * 
  * @author Julian Hack
  */
@@ -12,12 +12,12 @@ public class CharacterManager {
     private static ArrayList<Character> characters = new ArrayList<>();
 
     /**
-     * Erstellt ein Character Objekt mit den übergebenen Parametern.
+     * Erstellt ein {@link Character}-Objekt mit den übergebenen Parametern.
      *
-     * @param id Text-ID eines Characters.
-     * @param name Der Name des Characters.
-     * @param summary Zusatzinformationen zu dem Character.
-     * @param presentedIn Die Frame-ID in welcher der Character vorkommt.
+     * @param id Text-ID des {@link Character}s.
+     * @param name Name des {@link Character}s.
+     * @param summary Kurze Zusammenfassung der Rolle des {@link Character} in der Geschichte.
+     * @param presentedIn Die Frame-ID, in welcher dieser {@link Character} vorgestellt wird.
      * @throws EngineException Wird geschmissen, wenn versucht wird eine ID mehrmals zu vergeben.
      */
     public static void createCharacter(String id, String name, Optional<String> summary, Optional<Integer> presentedIn) throws EngineException {
@@ -33,9 +33,9 @@ public class CharacterManager {
     /**
      * Gibt den Character mit der jeweiligen ID zurück.
      * 
-     * @param id ID des jeweiligen Character Objektes, das zurückgegeben werden soll.
-     * @return Character Der angeforderte Character.
-     * @throws EngineException Wird geschmissen, wenn kein Character mit der jeweiligen ID im Speicher existiert.
+     * @param id ID des jeweiligen {@link Character} Objektes, das zurückgegeben werden soll.
+     * @return Character Der angeforderte {@link Character}.
+     * @throws EngineException Wird geschmissen, wenn kein {@link Character} mit der jeweiligen ID im Speicher existiert.
      */
     public static Character getCharacter(String id) throws EngineException {
         for (int i = 0; i < characters.size(); i++) {
