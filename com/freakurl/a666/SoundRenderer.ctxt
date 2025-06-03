@@ -1,6 +1,9 @@
 #BlueJ class context
 comment0.target=SoundRenderer
-comment0.text=\r\n\ Helfer-Klasse\ zum\ Ausgeben\ von\ Tonabl\u00E4ufen.\r\n\ \r\n\ @author\r\n
+comment0.text=\n\ Helfer-Klasse\ zum\ Ausgeben\ von\ Tonabl\u00E4ufen.\n\ \n\ @author\ Julian\ Hack\n
 comment1.params=
 comment1.target=SoundRenderer()
-numComments=2
+comment2.params=filepath
+comment2.target=void\ playMp3(java.lang.String)
+comment2.text=\n\ \n\ \ Spielt\ die\ jeweilige\ MP3-Datei\ ab.\n\ \ \n\ \ @param\ filepath\ Dateipfad\ zur\ MP3-Datei\n
+numComments=3
