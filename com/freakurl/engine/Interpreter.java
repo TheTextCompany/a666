@@ -182,7 +182,7 @@ public class Interpreter {
                         var tmp = loadRoutine(f.getParent(), src).frames;
                         importing = tmp.toArray(new Frame[tmp.size()]);
                     } catch (Exception e) {
-                        throw new EngineException("Faled to load import ROUTINE.IMPORTS[" + i + "] (@" + src + ") with: " + e.getMessage());
+                        throw new EngineException("Failed to load import ROUTINE.IMPORTS[" + i + "] (@" + src + ") with: " + e.getMessage());
                     }
                     
                     check:
