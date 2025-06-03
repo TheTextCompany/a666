@@ -135,7 +135,7 @@ public class Interpreter {
                         try {
                             to = Integer.parseInt(toAttribute.getTextContent());
                         } catch (Exception e) {
-                            throw new EngineException("Invalid value at ROUTINE.FRAMES[" + i + "].OPTIONS[" + j + "].TO: must me Integer");
+                            throw new EngineException("Invalid value at ROUTINE.FRAMES[" + i + "].OPTIONS[" + j + "].TO: must be an Integer");
                         }
                         
                         final boolean isDefault = option.getAttributes().getNamedItem("default") != null;
@@ -227,7 +227,7 @@ public class Interpreter {
                     try {
                         cpresentedIn = (presentedInAttribute != null) ? Integer.parseInt(presentedInAttribute.getTextContent()) : null;
                     } catch (Exception e) {
-                        throw new EngineException("Invalid value at ROUTINE.CHARACTERS[" + i + "].PRESENTEDIN: must me Integer");
+                        throw new EngineException("Invalid value at ROUTINE.CHARACTERS[" + i + "].PRESENTEDIN: must be an Integer");
                     }
                     var cpresentedInPresented = false;
                     if (cpresentedIn != null) {
