@@ -7,6 +7,10 @@
         <import src="e1.xml" />
     </imports>
 
+    <characters>
+        <character id="Max" name="Max" summary="Demo Charakter" presentedIn="3" />
+    </characters>
+
     <frames>
         <frame id="0" author="Jakob">
             <title>A666</title>
