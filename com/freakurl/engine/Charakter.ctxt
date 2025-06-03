@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.target=Charakter
-comment0.text=\n\ Container-Klasse\ f\u00FCr\ {@link\ Character}s.\n\ \n\ @author\ Julian\ Hack\n
-comment1.params=id\ name\ imagePath
-comment1.target=Charakter(java.lang.String,\ java.lang.String,\ java.lang.String)
-numComments=2

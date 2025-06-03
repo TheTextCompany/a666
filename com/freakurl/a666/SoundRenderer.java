@@ -1,10 +1,14 @@
 package com.freakurl.a666;
 
+
+
+
+
 /**
  * Helfer-Klasse zum Ausgeben von Tonabläufen.
  * 
- * @author
+ * @author Julian Hack
  */
 public class SoundRenderer {
-    public SoundRenderer() {}
+    SoundRenderer(){
 }
