@@ -8,7 +8,7 @@ package com.freakurl.engine;
 public class FreakEngine {    
     final Routine r;
     
-    Characters c = new Characters();
+    CharacterManager c = new CharacterManager();
     Storage s = new Storage();
     
     public FreakEngine() throws EngineException {
