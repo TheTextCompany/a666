@@ -242,7 +242,7 @@ public class Interpreter {
                         }
                     }
                     
-                    // CharacterManager.createCharakter(cid, cname, Optional.ofNullable(csummary), Optional.ofNullable(cpresentedIn));
+                    CharacterManager.createCharacter(cid, cname, Optional.ofNullable(csummary), Optional.ofNullable(cpresentedIn));
                 }
             }
         }
