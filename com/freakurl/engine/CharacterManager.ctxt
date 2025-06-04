@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=CharacterManager
-comment0.text=\n\ Klasse\ zum\ Erstellen\ und\ Abrufen\ von\ {@link\ Character}-Objekten.\n\ \n\ @author\ Julian\ Hack\n
+comment0.text=\r\n\ Klasse\ zum\ Erstellen\ und\ Abrufen\ von\ {@link\ Character}-Objekten.\r\n\ \r\n\ @author\ Julian\ Hack\r\n
 comment1.params=id\ name\ summary\ presentedIn
 comment1.target=void\ createCharacter(java.lang.String,\ java.lang.String,\ java.util.Optional,\ java.util.Optional)
-comment1.text=\n\ Erstellt\ ein\ {@link\ Character}-Objekt\ mit\ den\ \u00FCbergebenen\ Parametern.\n\n\ @param\ id\ Text-ID\ des\ {@link\ Character}s.\n\ @param\ name\ Name\ des\ {@link\ Character}s.\n\ @param\ summary\ Kurze\ Zusammenfassung\ der\ Rolle\ des\ {@link\ Character}\ in\ der\ Geschichte.\n\ @param\ presentedIn\ Die\ Frame-ID,\ in\ welcher\ dieser\ {@link\ Character}\ vorgestellt\ wird.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ versucht\ wird\ eine\ ID\ mehrmals\ zu\ vergeben.\n
+comment1.text=\r\n\ Erstellt\ ein\ {@link\ Character}-Objekt\ mit\ den\ \u00FCbergebenen\ Parametern.\r\n\r\n\ @param\ id\ Text-ID\ des\ {@link\ Character}s.\r\n\ @param\ name\ Name\ des\ {@link\ Character}s.\r\n\ @param\ summary\ Kurze\ Zusammenfassung\ der\ Rolle\ des\ {@link\ Character}\ in\ der\ Geschichte.\r\n\ @param\ presentedIn\ Die\ Frame-ID,\ in\ welcher\ dieser\ {@link\ Character}\ vorgestellt\ wird.\r\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ versucht\ wird\ eine\ ID\ mehrmals\ zu\ vergeben.\r\n
 comment2.params=id
 comment2.target=Character\ getCharacter(java.lang.String)
-comment2.text=\n\ Gibt\ den\ Character\ mit\ der\ jeweiligen\ ID\ zur\u00FCck.\n\ \n\ @param\ id\ ID\ des\ jeweiligen\ {@link\ Character}\ Objektes,\ das\ zur\u00FCckgegeben\ werden\ soll.\n\ @return\ Character\ Der\ angeforderte\ {@link\ Character}.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ kein\ {@link\ Character}\ mit\ der\ jeweiligen\ ID\ im\ Speicher\ existiert.\n
+comment2.text=\r\n\ Gibt\ den\ Character\ mit\ der\ jeweiligen\ ID\ zur\u00FCck.\r\n\ \r\n\ @param\ id\ ID\ des\ jeweiligen\ {@link\ Character}\ Objektes,\ das\ zur\u00FCckgegeben\ werden\ soll.\r\n\ @return\ Character\ Der\ angeforderte\ {@link\ Character}.\r\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ kein\ {@link\ Character}\ mit\ der\ jeweiligen\ ID\ im\ Speicher\ existiert.\r\n
 numComments=3

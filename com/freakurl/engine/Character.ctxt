@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Character
-comment0.text=\n\ Container-Klasse\ f\u00FCr\ {@link\ Character}s.\n\ \n\ @author\ Julian\ Hack\n
+comment0.text=\r\n\ Container-Klasse\ f\u00FCr\ {@link\ Character}s.\r\n\ \r\n\ @author\ Julian\ Hack\r\n
 comment1.params=id\ name\ summary\ presentedIn
 comment1.target=Character(java.lang.String,\ java.lang.String,\ java.util.Optional,\ java.util.Optional)
 numComments=2

@@ -23,7 +23,7 @@ public class CharacterManager {
     public static void createCharacter(String id, String name, Optional<String> summary, Optional<Integer> presentedIn) throws EngineException {
         for (int i = 0; i < characters.size(); i++) {
             if (characters.get(i).id.equals(id)) {
-                throw new EngineException ("Failed to create Character with ID: " + id + "; already exists");
+                throw new EngineException("Failed to create Character with ID: " + id + "; already exists");
             }
         }
 
