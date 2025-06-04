@@ -7,6 +7,10 @@
         <import src="e1.xml" />
     </imports>
 
+    <characters>
+        <character id="Max" name="Max" summary="Demo Charakter" presentedIn="2" />
+    </characters>
+
     <frames>
         <frame id="0" author="Jakob">
             <title>A666</title>
@@ -26,7 +30,7 @@
             <image src="1.png" />
             <sound src="1.mp3" />
             <options>
-                <option to="1">Weiter</option>
+                <option to="2">Weiter</option>
             </options>
         </frame>
     </frames>
