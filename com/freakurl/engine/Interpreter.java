@@ -135,7 +135,7 @@ public class Interpreter {
                         try {
                             to = Integer.parseInt(toAttribute.getTextContent());
                         } catch (Exception e) {
-                            throw new EngineException("Invalid value at ROUTINE.FRAMES[" + i + "].OPTIONS[" + j + "].TO: must me Integer");
+                            throw new EngineException("Invalid value at ROUTINE.FRAMES[" + i + "].OPTIONS[" + j + "].TO: must be an Integer");
                         }
                         
                         final boolean isDefault = option.getAttributes().getNamedItem("default") != null;
@@ -170,7 +170,20 @@ public class Interpreter {
                     for (var frame : frames) {
                         globalIds.add("" + frame.id);
                     }
-                    final var importing = loadRoutine(f.getParent(), node.getAttributes().getNamedItem("src").getTextContent()).frames;
+                    
+                    var srcAttribute = node.getAttributes().getNamedItem("src");
+                    if (srcAttribute == null) {
+                        throw new EngineException("Document didn't include ROUTINE.IMPORTS[" + i + "].SRC element");
+                    }
+                    var src = srcAttribute.getTextContent();
+                    
+                    Frame[] importing;
+                    try {
+                        var tmp = loadRoutine(f.getParent(), src).frames;
+                        importing = tmp.toArray(new Frame[tmp.size()]);
+                    } catch (Exception e) {
+                        throw new EngineException("Failed to load import ROUTINE.IMPORTS[" + i + "] (@" + src + ") with: " + e.getMessage());
+                    }
                     
                     check:
                     for (var frame : importing) {
@@ -183,6 +196,53 @@ public class Interpreter {
                     }
                     
                     globalIds.clear();
+                }
+            }
+        }
+        
+        Node charactersNode = getChildElementByTagName(routine, "characters");
+        if (charactersNode != null) {
+            NodeList charactersChildren = charactersNode.getChildNodes();
+            for (var i = 0; i < charactersChildren.getLength(); i++) {
+                var node = charactersChildren.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE
+                 && ((Element) node).getTagName().equals("character")) {
+                    var idAttribute = node.getAttributes().getNamedItem("id");
+                    if (idAttribute == null) {
+                        throw new EngineException("Document didn't include ROUTINE.CHARACTERS[" + i + "].ID element");
+                    }
+                    final var cid = idAttribute.getTextContent();
+                    
+                    var nameAttribute = node.getAttributes().getNamedItem("name");
+                    if (nameAttribute == null) {
+                        throw new EngineException("Document didn't include ROUTINE.CHARACTERS[" + i + "].NAME element");
+                    }
+                    final var cname = nameAttribute.getTextContent();
+                    
+                    var summaryAttribute = node.getAttributes().getNamedItem("summary");
+                    final String csummary = (summaryAttribute != null) ? summaryAttribute.getTextContent() : null;
+                    
+                    var presentedInAttribute = node.getAttributes().getNamedItem("presentedIn");
+                    Integer cpresentedIn;
+                    try {
+                        cpresentedIn = (presentedInAttribute != null) ? Integer.parseInt(presentedInAttribute.getTextContent()) : null;
+                    } catch (Exception e) {
+                        throw new EngineException("Invalid value at ROUTINE.CHARACTERS[" + i + "].PRESENTEDIN: must be an Integer");
+                    }
+                    var cpresentedInPresented = false;
+                    if (cpresentedIn != null) {
+                        for (var j : frames) {
+                            if (j.id == cpresentedIn) {
+                                cpresentedInPresented = true;
+                                break;
+                            }
+                        }
+                        if (!cpresentedInPresented) {
+                            throw new EngineException("Invalid value at ROUTINE.CHARACTERS[" + i + "].PRESENTEDIN: " + cpresentedIn + "; ID not registered");
+                        }
+                    }
+                    
+                    // CharacterManager.createCharakter(cid, cname, Optional.ofNullable(csummary), Optional.ofNullable(cpresentedIn));
                 }
             }
         }

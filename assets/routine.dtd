@@ -6,25 +6,37 @@
 <!ELEMENT image EMPTY>
 <!ATTLIST image src CDATA #REQUIRED>
 
-<!ELEMENT routine (summary, sound?, imports?, frames)>
+<!ELEMENT routine (summary, sound?, imports?, characters?, frames)>
 <!ELEMENT summary (#PCDATA)>
 
 <!ELEMENT imports (import*)>
 <!ELEMENT import EMPTY>
 <!ATTLIST import src CDATA #REQUIRED>
 
+<!ELEMENT characters (character+)>
+<!ELEMENT character EMPTY>
+<!ATTLIST character
+    id CDATA #REQUIRED
+    name CDATA #REQUIRED
+    summary CDATA #IMPLIED
+    presentedIn CDATA #IMPLIED>
+
 <!ELEMENT frames (frame+)>
 <!ELEMENT frame (title, text, image?, sound?, options)>
-<!ATTLIST frame id CDATA #REQUIRED
-            author CDATA #IMPLIED
+<!ATTLIST frame
+    id CDATA #REQUIRED
+    author CDATA #IMPLIED
 >
 
 <!ELEMENT title (#PCDATA)>
-<!ELEMENT text (#PCDATA)>
+<!ELEMENT text (#PCDATA | cr)*>
 <!ELEMENT options (option+)>
 
+<!ELEMENT cr EMPTY>
+<!ATTLIST cr id CDATA #REQUIRED>
+
 <!ELEMENT option (#PCDATA)>
-<!ATTLIST option to CDATA #REQUIRED
-            default CDATA #IMPLIED
-            style NMTOKENS #IMPLIED
->
+<!ATTLIST option
+    to CDATA #REQUIRED
+    default CDATA #IMPLIED
+    style NMTOKENS #IMPLIED>
