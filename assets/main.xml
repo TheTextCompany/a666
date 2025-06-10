@@ -11,6 +11,10 @@
         <character id="Max" name="Max" summary="Demo Charakter" presentedIn="2" />
     </characters>
 
+    <flags>
+        <flag id="test" />
+    </flags>
+
     <frames>
         <frame id="0" author="Jakob">
             <title>A666</title>
@@ -22,8 +26,8 @@
                 <option to="1" style="greyed shining shaking" default="default">Start</option>
             </options>
         </frame>
-        <frame id="1">
-            <title>The Beginning</title>
+        <frame id="1" flag="test">
+            <title>The Beginning<if flag="test"> – I've Played These Games Before!!1!</if></title>
             <text>
                 Once upon a time, in a land far away, ...
             </text>

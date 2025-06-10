@@ -4,9 +4,10 @@
     <frames>
         <frame id="2">
             <title>Test E1</title>
-            <text>There once was a shit ...</text>
+            <text>There <if flag="test">always<else />once</if> was a ship ...</text>
             <options>
-                <option to="0">Ende</option>
+                <option to="0" ifFlag="test">Return Home</option>
+                <option to="0" unlessFlag="test">Ende</option>
             </options>
         </frame>
     </frames>

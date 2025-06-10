@@ -6,10 +6,15 @@
 <!ELEMENT image EMPTY>
 <!ATTLIST image src CDATA #REQUIRED>
 
-<!ELEMENT routine (summary, sound?, imports?, characters?, frames)>
+<!ELEMENT if (#PCDATA | else)*>
+<!ATTLIST if
+    flag CDATA #REQUIRED>
+<!ELEMENT else (#PCDATA)>
+
+<!ELEMENT routine (summary, sound?, imports?, characters?, flags?, frames)>
 <!ELEMENT summary (#PCDATA)>
 
-<!ELEMENT imports (import*)>
+<!ELEMENT imports (import+)>
 <!ELEMENT import EMPTY>
 <!ATTLIST import src CDATA #REQUIRED>
 
@@ -21,22 +26,30 @@
     summary CDATA #IMPLIED
     presentedIn CDATA #IMPLIED>
 
+<!ELEMENT flags (flag+)>
+<!ELEMENT flag EMPTY>
+<!ATTLIST flag
+    id CDATA #REQUIRED
+    strict CDATA #IMPLIED>
+
 <!ELEMENT frames (frame+)>
 <!ELEMENT frame (title, text, image?, sound?, options)>
 <!ATTLIST frame
     id CDATA #REQUIRED
     author CDATA #IMPLIED
->
+    flag CDATA #IMPLIED>
 
-<!ELEMENT title (#PCDATA)>
-<!ELEMENT text (#PCDATA | cr)*>
+<!ELEMENT title (#PCDATA | if)*>
+<!ELEMENT text (#PCDATA | cr | if)*>
 <!ELEMENT options (option+)>
 
 <!ELEMENT cr EMPTY>
 <!ATTLIST cr id CDATA #REQUIRED>
 
-<!ELEMENT option (#PCDATA)>
+<!ELEMENT option (#PCDATA | if)*>
 <!ATTLIST option
     to CDATA #REQUIRED
     default CDATA #IMPLIED
-    style NMTOKENS #IMPLIED>
+    style NMTOKENS #IMPLIED
+    ifFlag CDATA #IMPLIED
+    unlessFlag CDATA #IMPLIED>
