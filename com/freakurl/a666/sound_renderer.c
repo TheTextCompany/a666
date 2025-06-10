@@ -1,10 +1,6 @@
 #include <windows.h>
 #include <stdbool.h>
 #include <mmsystem.h>
-#include <windowsx.h>
-
-
-
 
 
 __declspec (dllexport) bool __cdecl play_wav(char *wav_path) {
