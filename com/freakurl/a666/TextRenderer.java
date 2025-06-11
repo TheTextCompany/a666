@@ -17,7 +17,7 @@ public class TextRenderer {
             engine = new FreakEngine();
             render(0, null);
         } catch (Exception e) {
-            System.out.println("Critical Error, panicked! " + e.getMessage());
+            System.out.println("Critical error, panicked: " + e.getMessage());
         }
     }
 
@@ -26,20 +26,25 @@ public class TextRenderer {
         render(id, null);
 
     }
-    
-   /**
-    * render gibt Text auf der Konsole aus.
-    * @param id der Textelemente
-    * @param String error ist ein Fehler
-    */
-    
+    /**
+     * render gibt Text auf der Konsole aus.
+     * @param id der Textelemente
+     * @param String error ist ein Fehler
+     * Gibt einen Frame mit der gegebenen ID aus.
+     * 
+     * @param id Die angeforderte ID.
+     * @param error Wenn nicht {@code null}, ein Fehler, welcher von dem Eingabefeld angezeigt wird.
+     */
     public void render(int id, String error) throws EngineException {
         System.out.print("\u000C");
+        
         var f = engine.getFrame(id);
+        
         System.out.println(" == " + f.title + " ==");
         System.out.println("\n" + f.text);
 
         System.out.println("\nOptionen:");
+        
         for (int i = 0; i < f.options.size(); i++) {
             System.out.println(" " + (i + 1) + ") " + f.options.get(i).body);
         }
@@ -54,11 +59,9 @@ public class TextRenderer {
         Integer enteredId;
 
         try {
-
             enteredId = (new Scanner(System.in)).nextInt() - 1;
 
         } catch (Exception e) {
-
             enteredId = null;
 
         }

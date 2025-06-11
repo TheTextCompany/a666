@@ -5,12 +5,9 @@ import com.freakurl.engine.FreakEngine;
 /**
  * GUI-Version des Spiels.
  * 
- * @author
+ * @author Kitan, Julian
  */
-public class GuiRenderer implements Renderer {
+public class GuiRenderer {
     FreakEngine engine;
-    
-    SoundRenderer s = new SoundRenderer();
-    
     public GuiRenderer() {}
 }
