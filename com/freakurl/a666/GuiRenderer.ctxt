@@ -3,4 +3,6 @@ comment0.target=GuiRenderer
 comment0.text=\r\n\ GUI-Version\ des\ Spiels.\r\n\ \r\n\ @author\ Kitan,\ Julian\r\n
 comment1.params=
 comment1.target=GuiRenderer()
-numComments=2
+comment2.params=path
+comment2.target=void\ render(java.lang.String)
+numComments=3

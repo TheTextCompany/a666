@@ -2,6 +2,8 @@ package com.freakurl.a666;
 
 import com.freakurl.engine.FreakEngine;
 
+import javax.swing.*;
+
 /**
  * GUI-Version des Spiels.
  * 
@@ -10,4 +12,8 @@ import com.freakurl.engine.FreakEngine;
 public class GuiRenderer {
     FreakEngine engine;
     public GuiRenderer() {}
+    
+    public void render(String path){
+        
+    }
 }
