@@ -7,7 +7,7 @@ import com.freakurl.engine.FreakEngine;
  * 
  * @author
  */
-public class TextRenderer implements Renderer {
+public class TextRenderer {
     FreakEngine engine;
     
     public TextRenderer() {}
