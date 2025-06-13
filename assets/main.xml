@@ -11,10 +11,6 @@
         <character id="Max" name="Max" summary="Demo Charakter" presentedIn="2" />
     </characters>
 
-    <flags>
-        <flag id="test" />
-    </flags>
-
     <frames>
         <frame id="0" author="Jakob">
             <title>A666</title>

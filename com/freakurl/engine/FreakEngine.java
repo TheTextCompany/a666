@@ -46,7 +46,7 @@ public class FreakEngine {
                     flags.add(nextFlag);
                     nextFlag = null;
                 }
-                if (i.flag.isPresent()) {
+                if (i.flag.isPresent() && !flags.contains(i.flag.get())) {
                     nextFlag = i.flag.get();
                 }
                 return i.copyWithFlags(flags);

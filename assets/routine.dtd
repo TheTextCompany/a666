@@ -11,7 +11,7 @@
     flag CDATA #REQUIRED>
 <!ELEMENT else (#PCDATA)>
 
-<!ELEMENT routine (summary, sound?, imports?, characters?, flags?, frames)>
+<!ELEMENT routine (summary, sound?, imports?, characters?, frames)>
 <!ELEMENT summary (#PCDATA)>
 
 <!ELEMENT imports (import+)>
@@ -25,12 +25,6 @@
     name CDATA #REQUIRED
     summary CDATA #IMPLIED
     presentedIn CDATA #IMPLIED>
-
-<!ELEMENT flags (flag+)>
-<!ELEMENT flag EMPTY>
-<!ATTLIST flag
-    id CDATA #REQUIRED
-    strict CDATA #IMPLIED>
 
 <!ELEMENT frames (frame+)>
 <!ELEMENT frame (title, text, image?, sound?, options)>
