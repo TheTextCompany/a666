@@ -3,49 +3,61 @@ package com.freakurl.a666;
 import com.freakurl.engine.FreakEngine;
 import com.freakurl.engine.EngineException;
 import java.io.File;
+import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+import java.awt.*;
+import java.awt.Image;
 
 /**
  * GUI-Version des Spiels.
  * 
  * @author Kitan und Julian Hack
  */
-public class GuiRenderer {
-    File PrevPng;
-
-    public GuiRenderer() {}
-
-    /**
-     *  @author Julian Hack
-     *  Übergibt den absoluten Dateipfad an @link{displayImage()}.
-     *  
-     *  @param filePng Ein File Objekt einer PNG-Datei.
-     *  @throws EngineException Wird geschmissen, wenn die aktuelle und vorherige Bilddatei nicht existiert.
-     */
-
-    public int checkImage(File filePng) throws EngineException {
-        if (filePng.exists() == false ) {
-            if (PrevPng.exists() == false) {
+public class GuiRenderer extends JFrame {  
+    File prevPng;
+    
+    
+    public void checkFile(File currPng) throws EngineException {
+        
+           if (currPng.exists() == false ) {
+               
+            if (prevPng.exists() == false) {
                 throw new EngineException("No png file loadble");
-                return -1;
+                
             }
-            PrevPng = filePng;
-             
-            return  0;  
+
+            prevPng = currPng;  
+        }
+
+            
+        }
         
+        
+    
+    
+    
+    
+
+ 
+       
+        
+    
+         public void paintComponent(Graphics graphic) {
+            super.paintComponent(graphic);
+            ImageIcon imageIcon = new ImageIcon(currPng.getAbsolutePath());
+            Image image = imageIcon.getImage();
+            if(image == null){
+                
+                
+                
+                
+            }
+            
+        }
+    
     }
-        
-}
 
 
 
 
-
-
-
-
-
-
-
-
-
-public void setJPanelPos()

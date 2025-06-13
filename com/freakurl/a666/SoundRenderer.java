@@ -2,33 +2,42 @@ package com.freakurl.a666;
 
 import com.freakurl.engine.FreakEngine;
 import com.freakurl.engine.EngineException;
+import java.io.File;
+import javax.swing.*;
+import javax.sound.sampled.*;
+import java.awt.event.*;
+
 /**
  * Klasse zum Abspielen von WAV-Dateien.
  * 
  * @author Julian Hack.
  */
 public class SoundRenderer {
+    private Clip clip;
 
-    public static native boolean play_wav(String file_path);
-    
+    public SoundRenderer(){}
+
     /**
-     * Spielt die jeweilige WAV-Datei über die DLL ab.
+     * Stoppt ggf. das Abspielen einer WAV-Datei und spielt die eingegebene WAV-Datei ab.
      * 
-     * @param filePathWav Der Dateipfad zur WAV-Datei.
-     * @throws EngineException Wird geschmissen, wenn die DLL nicht gefunden wurde.
-     * @return sound Ob das Abspielen erflogreich war.
+     * @param fileWav ein File-Objekt einer WAV-Datei.
+     * @throws EngineException Wird geschmissen, wenn die WAV-Datei nicht abgespielt werden konnte.
      */
-    static boolean playWav(String filePathWav) throws EngineException {
-        boolean sound = false;
+    public void playWAV (File fileWav) throws EngineException {
         try {
-            System.loadLibrary("sound_renderer.dll");
-            sound = play_wav(filePathWav);
-         }
-         
-        catch (UnsatisfiedLinkError e) {
-            throw new EngineException("Failed to load DLL ; DLL not found."); 
+            if(clip != null && clip.isRunning()) {
+                clip.stop();
+            }
+
+            AudioInputStream stream = AudioSystem.getAudioInputStream(fileWav);
+            clip = AudioSystem.getClip();
+            clip.open(stream);
+            clip.setFramePosition(0);
+            clip.start();
         }
-        
-        return sound;
+
+        catch (Exception e) {
+            throw new EngineException("Audio-Datei konnte nicht abgespielt werden");
+        }
     }
 }

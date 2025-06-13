@@ -1,8 +1,6 @@
 #BlueJ class context
 comment0.target=GuiRenderer
 comment0.text=\n\ GUI-Version\ des\ Spiels.\n\ \n\ @author\ Kitan\ und\ Julian\ Hack\n
-comment1.params=
-comment1.target=GuiRenderer()
-comment2.params=filePathPng
-comment2.target=void\ renderImage(java.io.File)
-numComments=3
+comment1.params=currPng
+comment1.target=GuiRenderer(java.io.File)
+numComments=2

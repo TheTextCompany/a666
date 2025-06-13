@@ -12,42 +12,35 @@ import javax.swing.JPanel;
  * @author Julian Hack, Kitan Egresi
  * 
  */
-public class Renderer
-{
+public class Renderer {
   
     
-    
-    
-   // static void renderFrame(Frame currFrame) {
-        
-
+    public static void render(Frame currFrame) {
         
         
         
         
         
         
-        
-        
-        
-        
-        
-        
-        
-    
-    /**
-     *  Berechnet die Position der Fenster anhand der Größe des Primärbildschirmes.
-     *  
-     * 
-     * 
-     * 
-     * 
-     */
-    public int[] calcWindowPosition(){
-        
-        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         
         
         
     }
+    
+  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+ 
 }

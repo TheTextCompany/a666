@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=SoundRenderer
 comment0.text=\n\ Klasse\ zum\ Abspielen\ von\ WAV-Dateien.\n\ \n\ @author\ Julian\ Hack.\n
-comment1.params=file_path
-comment1.target=boolean\ play_wav(java.lang.String)
-comment2.params=filePathWav
-comment2.target=boolean\ playWav(java.lang.String)
-comment2.text=\n\ Spielt\ die\ jeweilige\ WAV-Datei\ \u00FCber\ die\ DLL\ ab.\n\ \n\ @param\ filePathWav\ Der\ Dateipfad\ zur\ WAV-Datei.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ die\ DLL\ nicht\ gefunden\ wurde.\n\ @return\ sound\ Ob\ das\ Abspielen\ erflogreich\ war.\n
+comment1.params=
+comment1.target=SoundRenderer()
+comment2.params=fileWav
+comment2.target=void\ playWAV(java.io.File)
+comment2.text=\n\ Stoppt\ ggf.\ das\ Abspielen\ einer\ WAV-Datei\ und\ spielt\ die\ eingegebene\ WAV-Datei\ ab.\n\ \n\ @param\ fileWav\ ein\ File-Objekt\ einer\ WAV-Datei.\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ die\ WAV-Datei\ nicht\ abgespielt\ werden\ konnte.\n
 numComments=3
