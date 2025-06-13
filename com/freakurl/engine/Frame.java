@@ -137,7 +137,7 @@ public class Frame {
         for (var i = 0; i < nodes.getLength(); i++) {
             var node = nodes.item(i);
             node.normalize();
-            if (node.getNodeName() == "#text") {
+            if (node.getNodeName().equals("#text")) {
                 tmp.append(node.getTextContent());
             } else if (node.getNodeName() == "if") {
                 var ifNodes = node.getChildNodes();
