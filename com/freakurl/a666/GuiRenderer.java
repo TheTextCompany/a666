@@ -13,7 +13,8 @@ public class GuiRenderer {
     FreakEngine engine;
     public GuiRenderer() {}
     
-    public void render(String path){
+    public static void main(String[] args){
         
-    }
+    
+}
 }
