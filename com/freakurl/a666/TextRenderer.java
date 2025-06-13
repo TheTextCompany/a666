@@ -30,7 +30,6 @@ public class TextRenderer {
      */
     public void render(int id, String error) throws EngineException {
         System.out.print("\u000C");
-        
         var f = engine.getFrame(id);
         
         System.out.println(" == " + f.title + " ==");
