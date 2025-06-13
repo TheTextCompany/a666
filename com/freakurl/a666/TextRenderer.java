@@ -21,11 +21,6 @@ public class TextRenderer {
         }
     }
 
-    public void render(int id) throws EngineException {
-
-        render(id, null);
-
-    }
     /**
      * render gibt Text auf der Konsole aus.
      * @param id der Textelemente
