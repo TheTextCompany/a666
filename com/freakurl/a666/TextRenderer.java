@@ -23,9 +23,6 @@ public class TextRenderer {
     }
 
     /**
-     * render gibt Text auf der Konsole aus.
-     * @param id der Textelemente
-     * @param String error ist ein Fehler
      * Gibt einen Frame mit der gegebenen ID aus.
      * 
      * @param id Die angeforderte ID.
