@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class FreakEngine {    
     final Routine r;
-    final ArrayList flags = new ArrayList<String>();
+    final ArrayList<String> flags = new ArrayList<>();
     String nextFlag;
     
     public FreakEngine() throws EngineException {
