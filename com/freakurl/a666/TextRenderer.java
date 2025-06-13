@@ -54,7 +54,7 @@ public class TextRenderer {
             enteredId = null;
         }
         
-           if (enteredId == null || enteredId < 0 || enteredId >= f.options.size()) {
+        if (enteredId == null || enteredId < 0 || enteredId >= f.options.size()) {
             render(id, "Ungültige Eingabe.");
         }
 
