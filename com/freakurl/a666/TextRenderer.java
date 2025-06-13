@@ -48,14 +48,12 @@ public class TextRenderer {
         System.out.print("> ");
 
         Integer enteredId;
-
         try {
             enteredId = (new Scanner(System.in)).nextInt() - 1;
-
         } catch (Exception e) {
             enteredId = null;
-
         }
+        
            if (enteredId == null || enteredId < 0 || enteredId >= f.options.size()) {
             render(id, "Ungültige Eingabe.");
         }
