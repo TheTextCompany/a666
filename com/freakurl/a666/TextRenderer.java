@@ -55,7 +55,6 @@ public class TextRenderer {
         }
         System.out.print("> ");
 
-        //System.out.println(ANSI_GREEN + "> " + ANSI_RESET + " " + ANSI_RED + "Please type an option" + ANSI_RESET);
         Integer enteredId;
 
         try {
