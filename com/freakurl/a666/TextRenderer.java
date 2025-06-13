@@ -12,6 +12,7 @@ import com.freakurl.engine.EngineException;
  */
 public class TextRenderer {
     FreakEngine engine;
+
     public TextRenderer() {
         try {
             engine = new FreakEngine();
