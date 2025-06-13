@@ -46,7 +46,7 @@
 <!ELEMENT cr EMPTY>
 <!ATTLIST cr id CDATA #REQUIRED>
 
-<!ELEMENT option (#PCDATA | if)*>
+<!ELEMENT option (#PCDATA)>
 <!ATTLIST option
     to CDATA #REQUIRED
     default CDATA #IMPLIED

@@ -45,15 +45,23 @@ public class FrameOption {
      */
     public final String body;
     
+    final String ifFlag;
+    final String unlessFlag;
+    
     FrameOption(
         int to,
         boolean isDefault,
         String[] style,
+        String ifFlag,
+        String unlessFlag,
         String body
     ) {
         this.to = to;
         this.isDefault = isDefault;
         this.body = body;
+        
+        this.ifFlag = ifFlag;
+        this.unlessFlag = unlessFlag;
         
         ArrayList<FrameOptionStyle> styleParsed = new ArrayList<FrameOptionStyle>();
         for (var i = 0; i < style.length; i++) {
