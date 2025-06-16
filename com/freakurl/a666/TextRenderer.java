@@ -59,7 +59,7 @@ public class TextRenderer {
 
         Integer enteredId;
         try {
-            enteredId = Integer.parseInt((new Scanner(System.in)).nextLine()) - 1;
+            enteredId = Integer.parseInt((new Scanner(System.in)).nextLine().trim()) - 1;
         } catch (Exception e) {
             enteredId = null;
         }
