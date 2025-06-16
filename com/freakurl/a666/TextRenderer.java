@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.freakurl.engine.FreakEngine;
 import com.freakurl.engine.EngineException;
+import com.freakurl.engine.Frame;
 
 /**
  * Text-only-Version des Spiels.
@@ -29,8 +30,17 @@ public class TextRenderer {
      * @param error Wenn nicht {@code null}, ein Fehler, welcher von dem Eingabefeld angezeigt wird.
      */
     public void render(int id, String error) throws EngineException {
+        render(engine.getFrame(id), error);
+    }
+    
+    /**
+     * Gibt einen bereits geladenen Frame aus.
+     * 
+     * @param f Der auszugebene Frame.
+     * @param error Wenn nicht {@code null}, ein Fehler, welcher von dem Eingabefeld angezeigt wird.
+     */
+    public void render(Frame f, String error) throws EngineException {
         System.out.print("\033c\u000C");
-        var f = engine.getFrame(id);
         
         System.out.println(" == " + f.title + " ==");
         System.out.println("\n" + f.text);
@@ -49,13 +59,13 @@ public class TextRenderer {
 
         Integer enteredId;
         try {
-            enteredId = (new Scanner(System.in)).nextInt() - 1;
+            enteredId = Integer.parseInt((new Scanner(System.in)).nextLine()) - 1;
         } catch (Exception e) {
             enteredId = null;
         }
         
         if (enteredId == null || enteredId < 0 || enteredId >= f.options.size()) {
-            render(id, "Ungültige Eingabe.");
+            render(f, "Ungültige Eingabe.");
         }
 
         render(f.options.get(enteredId).to, null);
