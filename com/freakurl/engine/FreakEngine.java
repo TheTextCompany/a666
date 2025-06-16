@@ -1,5 +1,6 @@
 package com.freakurl.engine;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -21,6 +22,9 @@ public class FreakEngine {
               .getLocation()
               .toURI()
               .getPath();
+            if (assets.endsWith(".jar")) {
+                assets = (new File(assets)).getParent() + "/";
+            }
         } catch (Exception e) {
             throw new EngineException("Unable to get asset directory: " + e.getMessage());
         }
