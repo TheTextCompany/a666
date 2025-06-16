@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Frame
 comment0.text=\r\n\ Container-Klasse\ f\u00FCr\ eine\ Textbox.\r\n\ \r\n\ @author\ Jakob\r\n
-comment1.params=id\ author\ title\ text\ parent\ image\ sound\ options
-comment1.target=Frame(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ FrameOption[])
-numComments=2
+comment1.params=id\ author\ flags\ flag\ title\ text\ parent\ image\ sound\ options
+comment1.target=Frame(int,\ java.lang.String,\ java.util.ArrayList,\ java.lang.String,\ org.w3c.dom.NodeList,\ org.w3c.dom.NodeList,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ FrameOption[])
+comment2.params=nodes\ flags
+comment2.target=java.lang.String\ composeText(org.w3c.dom.NodeList,\ java.util.ArrayList)
+comment3.params=flags
+comment3.target=Frame\ copyWithFlags(java.util.ArrayList)
+numComments=4

@@ -10,7 +10,7 @@ import com.freakurl.engine.FreakEngine;
 public class GuiRenderer implements Renderer {
     FreakEngine engine;
     
-    SoundRenderer s = new SoundRenderer();
+    // SoundRenderer s = new SoundRenderer();
     
     public GuiRenderer() {}
 }

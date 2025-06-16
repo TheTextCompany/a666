@@ -22,8 +22,8 @@
                 <option to="1" style="greyed shining shaking" default="default">Start</option>
             </options>
         </frame>
-        <frame id="1">
-            <title>The Beginning</title>
+        <frame id="1" flag="test">
+            <title>The Beginning<if flag="test"> – I've Played These Games Before!!1!</if></title>
             <text>
                 Once upon a time, in a land far away, ...
             </text>
