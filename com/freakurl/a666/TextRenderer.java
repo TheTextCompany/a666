@@ -29,7 +29,7 @@ public class TextRenderer {
      * @param error Wenn nicht {@code null}, ein Fehler, welcher von dem Eingabefeld angezeigt wird.
      */
     public void render(int id, String error) throws EngineException {
-        System.out.print("\u000C");
+        System.out.print("\033c\u000C");
         var f = engine.getFrame(id);
         
         System.out.println(" == " + f.title + " ==");
