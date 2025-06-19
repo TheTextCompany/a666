@@ -131,7 +131,7 @@ public class Frame {
         this.options = List.of(options);
     }
     
-    String composeText(NodeList nodes, ArrayList<String> flags) {
+    private String composeText(NodeList nodes, ArrayList<String> flags) {
         var tmp = new StringBuilder("");
             
         for (var i = 0; i < nodes.getLength(); i++) {
@@ -139,6 +139,15 @@ public class Frame {
             node.normalize();
             if (node.getNodeName().equals("#text")) {
                 tmp.append(node.getTextContent());
+            } else if (node.getNodeName() == "cr") {
+                var idAttribute = node.getAttributes().getNamedItem("id");
+                String id = (idAttribute != null) ? idAttribute.getTextContent() : null;
+                
+                try {
+                    tmp.append(CharacterManager.getCharacter(id).name);
+                } catch (Exception e) {
+                    tmp.append("Unknown Character");
+                }
             } else if (node.getNodeName() == "if") {
                 var ifNodes = node.getChildNodes();
                 
