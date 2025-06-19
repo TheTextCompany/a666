@@ -6,10 +6,10 @@ on:
       - main
     types:
       - opened
-      - edited
       - synchronize
       - reopened
       - ready_for_review
+      - review_requested
 
 jobs:
   find:
