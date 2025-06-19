@@ -139,7 +139,7 @@ public class Frame {
             node.normalize();
             if (node.getNodeName().equals("#text")) {
                 tmp.append(node.getTextContent());
-            } else if (node.getNodeName() == "if") {
+            } else if ("if".equals(node.getNodeName())) {
                 var ifNodes = node.getChildNodes();
                 
                 var flagAttribute = node.getAttributes().getNamedItem("flag");
@@ -152,9 +152,9 @@ public class Frame {
                 for (var j = 0; j < ifNodes.getLength(); j++) {
                     var node2 = ifNodes.item(j);
                     node2.normalize();
-                    if (node2.getNodeName() == "#text") {
+                    if ("#text".equals(node2.getNodeName())) {
                         (isTmpIf ? tmpIf : tmpElse).append(node2.getTextContent());
-                    } else if (node2.getNodeName() == "else") {
+                    } else if ("else".equals(node2.getNodeName())) {
                         isTmpIf = false;
                     }
                 }
