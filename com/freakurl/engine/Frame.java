@@ -172,7 +172,14 @@ public class Frame {
             }
         }
         
-        return tmp.toString().trim();
+        var parts = tmp.toString().split("\n");
+        var res = new StringBuilder("");
+        
+        for (var i : parts) {
+            res.append(i.trim() + "\n");
+        }
+        
+        return res.toString().trim();
     }
     
     Frame copyWithFlags(ArrayList<String> flags) {

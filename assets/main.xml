@@ -14,9 +14,7 @@
     <frames>
         <frame id="0" author="Jakob">
             <title>A666</title>
-            <text>
-                Title screen
-            </text>
+            <text> Title screen </text>
             <image src="0.png" />
             <options>
                 <option to="1" style="greyed shining shaking" default="default">Start</option>
@@ -24,9 +22,7 @@
         </frame>
         <frame id="1" flag="test">
             <title>The Beginning<if flag="test"> – I've Played These Games Before!!1!</if></title>
-            <text>
-                Once upon a time, in a land far away, <cr id="max" /> ...
-            </text>
+            <text> Once upon a time, in a land far away, <cr id="max" /> ... </text>
             <image src="1.png" />
             <sound src="1.mp3" />
             <options>
