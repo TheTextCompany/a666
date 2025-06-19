@@ -13,7 +13,8 @@ jobs:
       files: ${{ steps.find.outputs.files }}
     steps:
       - uses: actions/checkout@v3
-      - id: find
+      - name: Finding
+        id: find
         shell: bash
         run: |
           cd com/freakurl/a666
@@ -27,6 +28,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         file: ${{ fromJson(needs.find.outputs.files) }}
+    name: "Compile: '${{ matrix.file }}' (${{ matrix.os }})"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -35,5 +37,4 @@ jobs:
         with:
           java-version: 21.0.4
           distribution: temurin
-      - name: "Compile: '${{ matrix.file }}'"
-        run: javac "${{ matrix.file }}"
+      - run: javac "com/freakurl/a666/${{ matrix.file }}"
