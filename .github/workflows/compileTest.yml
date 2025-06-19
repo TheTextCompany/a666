@@ -16,6 +16,7 @@ jobs:
       - id: find
         shell: bash
         run: |
+          cd com/freakurl/a666
           shopt -s globstar nullglob
           mapfile -t files < <(printf '%s\n' **/*.java)
           json=$(printf '%s\n' "${files[@]}" | jq -R . | jq -sc .)
