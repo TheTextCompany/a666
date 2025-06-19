@@ -34,6 +34,5 @@ jobs:
         with:
           java-version: 21.0.4
           distribution: temurin
-      - run: |
-          echo "Linting ${matrix.file}"
-          javac "${{ matrix.file }}"
+      - name: "Compile: '${{ matrix.file }}'"
+        run: javac "${{ matrix.file }}"
