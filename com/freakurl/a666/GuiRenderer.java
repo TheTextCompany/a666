@@ -7,7 +7,7 @@ import com.freakurl.engine.FreakEngine;
  * 
  * @author
  */
-public class GuiRenderer implements Renderer {
+public class GuiRenderer {
     FreakEngine engine;
     
     // SoundRenderer s = new SoundRenderer();
