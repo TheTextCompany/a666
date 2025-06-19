@@ -172,12 +172,8 @@ public class Frame {
             }
         }
         
-        var parts = tmp.toString().split("\n");
         var res = new StringBuilder("");
-        
-        for (var i : parts) {
-            res.append(i.trim() + "\n");
-        }
+        tmp.toString().lines().forEach(line -> res.append(line.trim()).append("\n"));
         
         return res.toString().trim();
     }
