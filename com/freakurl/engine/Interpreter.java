@@ -25,7 +25,7 @@ public class Interpreter {
      * @return Die geparste {@link Routine} mit allen {@link Frame}s.
      */
     static Routine loadRoutine(String parent) throws EngineException {
-        return loadRoutine(parent + "assets", "main.xml");
+        return loadRoutine(parent + "assets/frame", "main.xml");
     };
     
     /**
