@@ -8,7 +8,7 @@
     </imports>
 
     <characters>
-        <character id="Max" name="Max" summary="Demo Charakter" presentedIn="2" />
+        <character id="max" name="Max" summary="Demo Charakter" presentedIn="2" />
     </characters>
 
     <frames>
@@ -25,7 +25,7 @@
         <frame id="1" flag="test">
             <title>The Beginning<if flag="test"> – I've Played These Games Before!!1!</if></title>
             <text>
-                Once upon a time, in a land far away, ...
+                Once upon a time, in a land far away, <cr id="max" /> ...
             </text>
             <image src="1.png" />
             <sound src="1.mp3" />
