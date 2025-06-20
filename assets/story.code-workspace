@@ -9,7 +9,7 @@
             "path": "image"
         },
         {
-            "name": "sound",
+            "name": "Sound",
             "path": "sound"
         }
     ],
@@ -62,6 +62,7 @@
         "zenMode.hideLineNumbers": false,
         "zenMode.showTabs": "none",
         "zenMode.silentNotifications": false,
+        "telemetry.geriyocoImageGallery.isTelemetryEnabled": false,
 
         "peacock.color": "#499167",
         "peacock.affectActivityBar": false,
