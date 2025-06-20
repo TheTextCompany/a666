@@ -1,0 +1,78 @@
+{
+    "folders": [
+        {
+            "name": "Frames",
+            "path": "frame"
+        },
+        {
+            "name": "Images",
+            "path": "image"
+        },
+        {
+            "name": "sound",
+            "path": "sound"
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            "redhat.vscode-xml",
+            "aaron-bond.better-comments",
+            "usernamehw.errorlens",
+            "streetsidesoftware.code-spell-checker",
+            "streetsidesoftware.code-spell-checker-german",
+            "johnpapa.vscode-peacock",
+            "gruntfuggly.todo-tree",
+            "ms-vsliveshare.vsliveshare",
+            "sukumo28.wav-preview",
+            "geriyoco.vscode-image-gallery"
+        ]
+    },
+    "settings": {
+        "[xml]": {
+            "files.autoSave": "afterDelay",
+            "editor.formatOnPaste": true,
+            "editor.formatOnSave": true,
+            "editor.formatOnType": true,
+            "editor.rulers": [
+                100
+            ],
+        },
+
+        "workbench.sideBar.location": "right",
+        "explorer.confirmDelete": true,
+        "editor.guides.bracketPairs": "active",
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+            "*": "${basename}-*.${extname}"
+        },
+        "editor.minimap.enabled": true,
+        "editor.minimap.renderCharacters": false,
+        "editor.minimap.autohide": true,
+        "liveshare.anonymousGuestApproval": "reject",
+        "liveshare.alwaysFollowHost": true,
+        "liveshare.comments": false,
+        "liveshare.focusBehavior": "prompt",
+        "liveshare.shareExternalFiles": false,
+        "git.autoRepositoryDetection": "subFolders",
+        "git.openRepositoryInParentFolders": "always",
+        "git.blame.statusBarItem.enabled": true,
+        "git.blame.editorDecoration.enabled": false,
+        "git.promptToSaveFilesBeforeCommit": "always",
+        "zenMode.centerLayout": false,
+        "zenMode.hideLineNumbers": false,
+        "zenMode.showTabs": "none",
+        "zenMode.silentNotifications": false,
+
+        "peacock.color": "#499167",
+        "peacock.affectActivityBar": false,
+        "peacock.affectSashHover": false,
+        "peacock.affectTitleBar": false,
+        "workbench.colorCustomizations": {
+            "statusBar.background": "#499167",
+            "statusBar.foreground": "#e7e7e7",
+            "statusBarItem.hoverBackground": "#5fae80",
+            "statusBarItem.remoteBackground": "#499167",
+            "statusBarItem.remoteForeground": "#e7e7e7"
+        },
+    }
+}
