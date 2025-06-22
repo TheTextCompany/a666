@@ -2,10 +2,10 @@ package com.freakurl.a666;
 
 import com.freakurl.engine.FreakEngine;
 import com.freakurl.engine.EngineException;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import com.freakurl.engine.Frame;
+import java.awt.*;
+import javax.swing.*;
+import java.io.File;
 /**
  * Überklasse der einzelnen Renderer
  * 
@@ -15,10 +15,23 @@ import javax.swing.JPanel;
 public class Renderer {
   
     
-    public static void render(Frame currFrame) {
+    public static void renderFrame(Frame currFrame) {
         
+        if (currFrame.sound.isPresent() == true) {
+            
+            SoundRenderer renderer = new SoundRenderer();
+            renderer.renderWAV(currFrame.sound.get());
+            
+            
+            
+        }
         
-        
+        if (currFrame.image.isPresent() == true) {
+            
+            TextRenderer renderer = new TextRenderer();
+            renderer.render(currFrame.id, null);
+            
+        }
         
         
         

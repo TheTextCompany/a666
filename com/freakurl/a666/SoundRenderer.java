@@ -17,13 +17,29 @@ public class SoundRenderer {
 
     public SoundRenderer(){}
 
+    native int play_mp3(char[] file_path);
+
+    /**
+     * Lädt die DLL, konvertiert den MP3-Dateipfad und übergibt diesen der play_mp3-Funktion.
+     * 
+     * @param fileMp3 Der Dateipfad der abzuspielenden MP3-Datei.
+     */
+    public void renderMp3(File fileMp3) {
+        System.loadLibrary("sound_renderer_win.dll");
+        String filePathMp3 = fileMp3.getAbsolutePath();
+        char[] filePathArr = new char[filePathMp3.length() + 1];
+        filePathArr = filePathMp3.toCharArray();
+        filePathArr[filePathMp3.length() + 1] = '\0';
+        play_mp3(filePathArr);
+    }
+
     /**
      * Stoppt ggf. das Abspielen einer WAV-Datei und spielt die eingegebene WAV-Datei ab.
      * 
      * @param fileWav ein File-Objekt einer WAV-Datei.
      * @throws EngineException Wird geschmissen, wenn die WAV-Datei nicht abgespielt werden konnte.
      */
-    public void playWAV (File fileWav) throws EngineException {
+    public void renderWav(File fileWav) throws EngineException {
         try {
             if(clip != null && clip.isRunning()) {
                 clip.stop();
