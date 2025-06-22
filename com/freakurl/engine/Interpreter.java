@@ -25,7 +25,7 @@ public class Interpreter {
      * @return Die geparste {@link Routine} mit allen {@link Frame}s.
      */
     static Routine loadRoutine(String parent) throws EngineException {
-        return loadRoutine(parent + "assets", "main.xml");
+        return loadRoutine(parent + "assets/frame", "main.xml");
     };
     
     /**
@@ -98,17 +98,20 @@ public class Interpreter {
                 var authorAttribute = frame.getAttributes().getNamedItem("author");
                 final String author = (authorAttribute != null) ? authorAttribute.getTextContent() : null;
                 
+                var flagAttribute = frame.getAttributes().getNamedItem("flag");
+                final String flag = (flagAttribute != null) ? flagAttribute.getTextContent() : null;
+                
                 Node titleNode = getChildElementByTagName(frame, "title");
                 if (titleNode == null) {
                     throw new EngineException("Document didn't include ROUTINE.FRAMES[" + i + "].TITLE element");
                 }
-                final String title = titleNode.getTextContent().trim();
+                final NodeList title = titleNode.getChildNodes();
                 
                 Node textNode = getChildElementByTagName(frame, "text");
                 if (textNode == null) {
                     throw new EngineException("Document didn't include ROUTINE.FRAMES[" + i + "].TEXT element");
                 }
-                final String text = textNode.getTextContent().trim();
+                final NodeList text = textNode.getChildNodes();
                 
                 Node soundNode = getChildElementByTagName(frame, "sound");
                 final String sound = (soundNode != null) ? soundNode.getAttributes().getNamedItem("src").getTextContent() : null;
@@ -143,16 +146,24 @@ public class Interpreter {
                         var styleAttribute = option.getAttributes().getNamedItem("style");
                         final String[] style = ((styleAttribute != null) ? styleAttribute.getTextContent() : "").trim().split(" ");
                         
+                        var ifFlagAttribute = option.getAttributes().getNamedItem("ifFlag");
+                        final String ifFlag = (ifFlagAttribute != null) ? ifFlagAttribute.getTextContent() : null;
+                        var unlessFlagAttribute = option.getAttributes().getNamedItem("unlessFlag");
+                        final String unlessFlag = (unlessFlagAttribute != null) ? unlessFlagAttribute.getTextContent() : null;
+                        if (ifFlag != null && unlessFlag != null) {
+                            throw new EngineException("Invalid value at ROUTINE.FRAMES[" + i + "].OPTIONS[" + j + "]: only one of 'ifFlag' and 'unlessFlag' must be set");
+                        }
+                        
                         final String body = option.getTextContent().trim();
                         if (body.isEmpty()) {
                             throw new EngineException("Invalid value at ROUTINE.FRAMES[" + i + "].OPTIONS[" + j + "].BODY: body must not be empty");
                         }
                         
-                        options.add(new FrameOption(to, isDefault, style, body));
+                        options.add(new FrameOption(to, isDefault, style, ifFlag, unlessFlag, body));
                     }
                 }
                 
-                frames.add(new Frame(id, author, title, text, f.getParent(), image, sound, options.toArray(new FrameOption[options.size()])));
+                frames.add(new Frame(id, author, new ArrayList<String>(), flag, title, text, f.getParent(), image, sound, options.toArray(new FrameOption[options.size()])));
             }
         }
         

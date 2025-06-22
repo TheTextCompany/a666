@@ -1,0 +1,46 @@
+name: Compilation Test
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - review_requested
+
+jobs:
+  find:
+    name: "Finding"
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.find.outputs.files }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: find
+        shell: bash
+        run: |
+          cd com/freakurl/a666
+          shopt -s globstar nullglob
+          mapfile -t files < <(printf '%s\n' **/*.java)
+          json=$(printf '%s\n' "${files[@]}" | jq -R . | jq -sc .)
+          echo "files=$json" >> $GITHUB_OUTPUT
+  process:
+    needs: find
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        file: ${{ fromJson(needs.find.outputs.files) }}
+    name: "Compile: '${{ matrix.file }}' (${{ matrix.os }})"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Java JDK
+        uses: actions/setup-java@v3.14.1
+        with:
+          java-version: 21.0.4
+          distribution: temurin
+      - run: javac "com/freakurl/a666/${{ matrix.file }}"

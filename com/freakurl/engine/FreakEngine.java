@@ -1,5 +1,8 @@
 package com.freakurl.engine;
 
+import java.io.File;
+import java.util.ArrayList;
+
 /**
  * Haupt-Engine des Projekts.
  * 
@@ -7,8 +10,8 @@ package com.freakurl.engine;
  */
 public class FreakEngine {    
     final Routine r;
-    
-    Storage s = new Storage();
+    final ArrayList<String> flags = new ArrayList<>();
+    String nextFlag;
     
     public FreakEngine() throws EngineException {
         String assets;
@@ -19,6 +22,9 @@ public class FreakEngine {
               .getLocation()
               .toURI()
               .getPath();
+            if (assets.endsWith(".jar")) {
+                assets = (new File(assets)).getParent() + "/";
+            }
         } catch (Exception e) {
             throw new EngineException("Unable to get asset directory: " + e.getMessage());
         }
@@ -40,7 +46,14 @@ public class FreakEngine {
     public Frame getFrame(int id) throws EngineException {
         for (var i : r.frames) {
             if (id == i.id) {
-                return i;
+                if (nextFlag != null) {
+                    flags.add(nextFlag);
+                    nextFlag = null;
+                }
+                if (i.flag.isPresent() && !flags.contains(i.flag.get())) {
+                    nextFlag = i.flag.get();
+                }
+                return i.copyWithFlags(flags);
             }
         }
         throw new EngineException("No frame registered of ID: " + id);

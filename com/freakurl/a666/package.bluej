@@ -1,4 +1,5 @@
 #BlueJ package file
+<<<<<<< HEAD
 dependency1.from=ImageRenderer
 dependency1.to=JPanelImg
 dependency1.type=UsesDependency
@@ -20,11 +21,25 @@ package.frame.height=903
 package.frame.width=1453
 package.numDependencies=3
 package.numTargets=5
+=======
+objectbench.height=158
+objectbench.width=1416
+package.divider.horizontal=0.6
+package.divider.vertical=0.8002414001207001
+package.editor.height=656
+package.editor.width=1306
+package.editor.x=0
+package.editor.y=0
+package.frame.height=925
+package.frame.width=1453
+package.numDependencies=0
+package.numTargets=2
+>>>>>>> 9d2dbb6273fb8d265278c941fb09e24cfe225e67
 package.showExtends=true
 package.showUses=true
 readme.height=60
 readme.name=@README
-readme.width=49
+readme.width=48
 readme.x=10
 readme.y=10
 target1.height=70
@@ -35,6 +50,7 @@ target1.width=120
 target1.x=600
 target1.y=20
 target2.height=70
+<<<<<<< HEAD
 target2.name=ImageRenderer
 target2.showInterface=false
 target2.type=ClassTarget
@@ -62,3 +78,11 @@ target5.type=ClassTarget
 target5.width=140
 target5.x=100
 target5.y=510
+=======
+target2.name=TextRenderer
+target2.showInterface=false
+target2.type=ClassTarget
+target2.width=130
+target2.x=280
+target2.y=210
+>>>>>>> 9d2dbb6273fb8d265278c941fb09e24cfe225e67

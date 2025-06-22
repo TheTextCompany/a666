@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"l":"com.freakurl.a666"},{"l":"com.freakurl.engine"}];updateSearchResults();
