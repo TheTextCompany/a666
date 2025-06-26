@@ -24,18 +24,18 @@ public class GuiRenderer extends JFrame {
     private JTextArea textArea;
     private JTextField inputField;
 
-
     public GuiRenderer() throws EngineException{
-        //try{
-        engine = new FreakEngine();
-        render(0, null);
+        try{
+            engine = new FreakEngine();
+            render(0, null);
 
-        //}
+        }
 
-        //catch (Exception e) {
-        //showMessageDialog(null, "Critical error, panicked: " + e.getMessage());
-    } 
-    //}
+        catch (Exception e) {
+            showMessageDialog(null, "Critical error, panicked: " + e.getMessage());
+        } 
+
+    }
 
     /** 
      * Fügt eine GUI hinzu. Diese besteht aus einem Text-Feld und einem Bild.
@@ -47,85 +47,87 @@ public class GuiRenderer extends JFrame {
         Integer input = 0;
         var frame = engine.getFrame(id);
         handleImage(frame);
-        
+
         // ----------- Image Panel ------------
-         
+
         JLabel imageLabel = new JLabel(); 
         ImageIcon imageIcon = new ImageIcon("your_image.jpg");
         imageLabel.setIcon(imageIcon); 
         JPanel imagePanel = new JPanel(); 
         imagePanel.add(imageLabel);
-        
+
         // ----------- Text Area Panel ------------
-        
+
         StringBuilder options = new StringBuilder("\n\n\n\n Options:"); 
         for (int i = 0; i < frame.options.size(); i++){
             options.append( i + ");\n");
         }
-        
+
         textArea = new JTextArea("==" + frame.title + "==\n" + frame.text + options);
         textArea.setLineWrap(true);      // Für Zeilenumbruch
         textArea.setEditable(false);
         setSize(500,500);
         JPanel textPanel = new JPanel(); 
-        
+
         // ----------- Input Panel ------------
-        
+
         inputField = new JTextField(1);
         JButton confirmButton = new JButton("Bestätigen");
 
         confirmButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                String UserInput = inputField.getText();
-                inputField.setText("");
-                Integer input = Integer.parseInt(UserInput);
-            }
-        });
-        
+                public void actionPerformed(ActionEvent e) {
+                    String UserInput = inputField.getText();
+                    inputField.setText("");
+                    Integer input = Integer.parseInt(UserInput);
+                }
+            });
+
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
         inputPanel.add(inputField);
         inputPanel.add(Box.createRigidArea(new Dimension(10, 0)));
         inputPanel.add(confirmButton);
-        
+
         // ------------ Layout anpassen ------------
-        
+
         add(imagePanel, BorderLayout.NORTH);
         add(textPanel, BorderLayout.CENTER);
         add(inputPanel, BorderLayout.SOUTH);
-        
+
         // ------------ Fertigstellen ------------
-        
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Fenster im Zentrum
         pack();
         setSize(2000, 1000);
         setVisible(true);
-        
-        
-            
-            if (error != null) {
-                showMessageDialog(null, error);
-                setVisible(false);
-                dispose();
-            }
 
-            try {
-                enteredId = input;
-            } catch (Exception e) {
-                enteredId = null;
-            }
+        if(frame.sound.isPresent()){
 
-            if (enteredId == null || enteredId < 0 || enteredId >= frame.options.size()) {
-                render(id, "Ungültige Eingabe.");
-                setVisible(false);
-                dispose();
-            }
-
-            render(frame.options.get(enteredId).to, null);
+            SoundRenderer renderer = new SoundRenderer();
+            renderer.renderWav(frame);
         }
 
-    
+        if (error != null) {
+            showMessageDialog(null, error);
+            setVisible(false);
+            dispose();
+        }
+
+        try {
+            enteredId = input;
+        } catch (Exception e) {
+            enteredId = null;
+        }
+
+        if (enteredId == null || enteredId < 0 || enteredId >= frame.options.size()) {
+            render(id, "Ungültige Eingabe.");
+            setVisible(false);
+            dispose();
+        }
+
+        render(frame.options.get(enteredId).to, null);
+    }
 
     /**
      * Überprüft ob ein Bild im Frame vorhanden ist und passt dementsprechend das zu rendernde Bild an.
