@@ -43,6 +43,7 @@ public class GuiRenderer extends JFrame {
      * @param error eine evlt mögliche Errormeldung.
      */
     private void render(int id, String error) throws EngineException {
+
         setLayout(new BorderLayout());
         Integer input = 0;
         var frame = engine.getFrame(id);
@@ -63,29 +64,28 @@ public class GuiRenderer extends JFrame {
             options.append( i + ");\n");
         }
 
-        textArea = new JTextArea("==" + frame.title + "==\n" + frame.text + options);
-        textArea.setLineWrap(true);      // Für Zeilenumbruch
-        textArea.setEditable(false);
+        textArea = new JTextArea("==" + frame.title + "==\n" + frame.text + options); 
+        textArea.setText("==" + frame.title + "==\n" + frame.text + options);
         setSize(500,500);
+        setVisible(true);
         JPanel textPanel = new JPanel(); 
 
         // ----------- Input Panel ------------
 
-        inputField = new JTextField(1);
+        inputField = new JTextField(100);
         JButton confirmButton = new JButton("Bestätigen");
 
         confirmButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     String UserInput = inputField.getText();
                     inputField.setText("");
-                    Integer input = Integer.parseInt(UserInput);
+                    int input = Integer.parseInt(UserInput);
                 }
             });
 
         JPanel inputPanel = new JPanel();
         inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
         inputPanel.add(inputField);
-        inputPanel.add(Box.createRigidArea(new Dimension(10, 0)));
         inputPanel.add(confirmButton);
 
         // ------------ Layout anpassen ------------
@@ -99,7 +99,7 @@ public class GuiRenderer extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Fenster im Zentrum
         pack();
-        setSize(2000, 1000);
+        setSize(1500, 1000);
         setVisible(true);
 
         if(frame.sound.isPresent()){
@@ -122,11 +122,9 @@ public class GuiRenderer extends JFrame {
 
         if (enteredId == null || enteredId < 0 || enteredId >= frame.options.size()) {
             render(id, "Ungültige Eingabe.");
-            setVisible(false);
-            dispose();
-        }
 
-        render(frame.options.get(enteredId).to, null);
+            render(frame.options.get(enteredId).to, null);
+        }
     }
 
     /**
