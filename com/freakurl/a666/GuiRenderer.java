@@ -51,7 +51,7 @@ public class GuiRenderer extends JFrame {
         // ----------- Image Panel ------------
 
         JLabel imageLabel = new JLabel(); 
-        ImageIcon imageIcon = new ImageIcon("your_image.jpg");
+        ImageIcon imageIcon = new ImageIcon(imageFile.getAbsolutePath());
         imageLabel.setIcon(imageIcon); 
         JPanel imagePanel = new JPanel(); 
         imagePanel.add(imageLabel);
