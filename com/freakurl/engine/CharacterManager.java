@@ -12,7 +12,7 @@ public class CharacterManager {
     private static ArrayList<Character> characters = new ArrayList<>();
 
     /**
-     * Erstellt ein {@link Character}-Objekt mit den übergebenen Parametern.
+     * Erstellt ein {@link Character}-Objekt mit den übergebenen Parametern und fügt diesen der ArrayList hinzu
      *
      * @param id Text-ID des {@link Character}s.
      * @param name Name des {@link Character}s.
@@ -28,6 +28,23 @@ public class CharacterManager {
         }
 
         characters.add(new Character(id, name, summary, presentedIn));
+    }
+
+    /**
+     * Überprüft ob ein {@link Character}-Objekt mit der übergebenen ID in der ArrayList existiert.
+     * 
+     * @param id Text-ID des {@link Character}s.
+     * @return true Wenn ein {@link Character}-Objekt mit der übergebenen ID existiert.
+     * @return false Wenn kein {@link Character}-Objekt mit der übergebenen ID existiert.
+     */
+    public static boolean checkForCharacter(String id) {
+        for (int i = 0; i < characters.size(); i++) {
+            if (characters.get(i).id.equals(id)) {        
+                return true;
+            }
+        }    
+        
+        return false;
     }
 
     /**

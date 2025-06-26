@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=SoundRenderer
+comment0.text=\r\n\ Klasse\ zum\ Abspielen\ von\ WAV-Dateien.\r\n\ \r\n\ @author\ Julian\ Hack.\r\n
+comment1.params=
+comment1.target=SoundRenderer()
+comment2.params=file_path
+comment2.target=int\ play_mp3(char[])
+comment3.params=frame
+comment3.target=void\ renderMp3(com.freakurl.engine.Frame)
+comment3.text=\r\n\ L\u00E4dt\ die\ DLL,\ konvertiert\ den\ MP3-Dateipfad\ und\ \u00FCbergibt\ diesen\ der\ play_mp3-Funktion.\r\n\ \r\n\ @param\ fileMp3\ Der\ Dateipfad\ der\ abzuspielenden\ MP3-Datei.\r\n\ @throws\ EngineException\ Wird\ geschmissen\ wenn\ die\ DLL\ nicht\ geladen\ werden\ konnte.\r\n
+comment4.params=frame
+comment4.target=void\ renderWav(com.freakurl.engine.Frame)
+comment4.text=\r\n\ Stoppt\ ggf.\ das\ Abspielen\ einer\ WAV-Datei\ und\ spielt\ die\ eingegebene\ WAV-Datei\ ab.\r\n\ \r\n\ @param\ fileWav\ ein\ File-Objekt\ einer\ WAV-Datei.\r\n\ @throws\ EngineException\ Wird\ geschmissen,\ wenn\ die\ WAV-Datei\ nicht\ abgespielt\ werden\ konnte.\r\n
+numComments=5
