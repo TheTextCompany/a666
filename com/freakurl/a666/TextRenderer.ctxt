@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.target=TextRenderer
-comment0.text=\n\ Text-only-Version\ des\ Spiels.\n\ \n\ @author\ Kitan\n
+comment0.text=\r\n\ Text-only-Version\ des\ Spiels.\r\n\ \r\n\ @author\ Kitan\r\n
 comment1.params=
 comment1.target=TextRenderer()
 comment2.params=id\ error
 comment2.target=void\ render(int,\ java.lang.String)
-comment2.text=\n\ Gibt\ einen\ Frame\ mit\ der\ gegebenen\ ID\ aus.\n\ \n\ @param\ id\ Die\ angeforderte\ ID.\n\ @param\ error\ Wenn\ nicht\ {@code\ null},\ ein\ Fehler,\ welcher\ von\ dem\ Eingabefeld\ angezeigt\ wird.\n
+comment2.text=\r\n\ Gibt\ einen\ Frame\ mit\ der\ gegebenen\ ID\ aus.\r\n\ \r\n\ @param\ id\ Die\ angeforderte\ ID.\r\n\ @param\ error\ Wenn\ nicht\ {@code\ null},\ ein\ Fehler,\ welcher\ von\ dem\ Eingabefeld\ angezeigt\ wird.\r\n
 comment3.params=args
 comment3.target=void\ main(java.lang.String[])
 numComments=4

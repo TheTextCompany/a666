@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=GuiRenderer
-comment0.text=\n\ GUI-Version\ des\ Spiels.\n\ \n\ @author\ Kitan\n\ @author\ Julian\n
+comment0.text=\r\n\ GUI-Version\ des\ Spiels.\r\n\ \r\n\ @author\ Kitan\r\n\ @author\ Julian\r\n
 comment1.params=
 comment1.target=GuiRenderer()
 comment2.params=id\ error
 comment2.target=void\ render(int,\ java.lang.String)
-comment2.text=\ \n\ F\u00FCgt\ eine\ GUI\ hinzu.\ Diese\ besteht\ aus\ einem\ Text-Feld\ und\ einem\ Bild.\n\ @param\ id\ die\ ID\ des\ zu\ ladenden\ Frames.\n\ @param\ error\ eine\ evlt\ m\u00F6gliche\ Errormeldung.\n
+comment2.text=\ \r\n\ F\u00FCgt\ eine\ GUI\ hinzu.\ Diese\ besteht\ aus\ einem\ Text-Feld\ und\ einem\ Bild.\r\n\ @param\ id\ die\ ID\ des\ zu\ ladenden\ Frames.\r\n\ @param\ error\ eine\ evlt\ m\u00F6gliche\ Errormeldung.\r\n
 comment3.params=e
 comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment4.params=frame
 comment4.target=void\ handleImage(com.freakurl.engine.Frame)
-comment4.text=\n\ \u00DCberpr\u00FCft\ ob\ ein\ Bild\ im\ Frame\ vorhanden\ ist\ und\ passt\ dementsprechend\ das\ zu\ rendernde\ Bild\ an.\n\ @param\ frame\ der\ aktuelle\ Frame,\ welcher\ zu\ rendern\ ist.\n
+comment4.text=\r\n\ \u00DCberpr\u00FCft\ ob\ ein\ Bild\ im\ Frame\ vorhanden\ ist\ und\ passt\ dementsprechend\ das\ zu\ rendernde\ Bild\ an.\r\n\ @param\ frame\ der\ aktuelle\ Frame,\ welcher\ zu\ rendern\ ist.\r\n
 numComments=5

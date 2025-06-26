@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.freakurl.engine.FreakEngine;
 import com.freakurl.engine.EngineException;
+import com.freakurl.engine.Frame;
 
 /**
  * Text-only-Version des Spiels.
@@ -29,8 +30,17 @@ public class TextRenderer {
      * @param error Wenn nicht {@code null}, ein Fehler, welcher von dem Eingabefeld angezeigt wird.
      */
     public void render(int id, String error) throws EngineException {
-        System.out.print("\u000C");
-        var f = engine.getFrame(id);
+        render(engine.getFrame(id), error);
+    }
+    
+    /**
+     * Gibt einen bereits geladenen Frame aus.
+     * 
+     * @param f Der auszugebene Frame.
+     * @param error Wenn nicht {@code null}, ein Fehler, welcher von dem Eingabefeld angezeigt wird.
+     */
+    public void render(Frame f, String error) throws EngineException {
+        System.out.print("\033c\u000C");
         
         System.out.println(" == " + f.title + " ==");
         System.out.println("\n" + f.text);
@@ -49,13 +59,13 @@ public class TextRenderer {
 
         Integer enteredId;
         try {
-            enteredId = (new Scanner(System.in)).nextInt() - 1;
+            enteredId = Integer.parseInt((new Scanner(System.in)).nextLine().trim()) - 1;
         } catch (Exception e) {
             enteredId = null;
         }
         
         if (enteredId == null || enteredId < 0 || enteredId >= f.options.size()) {
-            render(id, "Ungültige Eingabe.");
+            render(f, "Ungültige Eingabe.");
         }
 
         render(f.options.get(enteredId).to, null);
@@ -64,15 +74,5 @@ public class TextRenderer {
     public static void main(String[] args) {
         new TextRenderer();
     }   
-    /**
-    public static final String ANSI_RESET = "\u001B[0m";
-    //zum reseten der Farbe
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_WHITE = "\u001B[37m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_RED = "\u001B[31m";
-    //weitere Farben möglich
-     */
 }
 

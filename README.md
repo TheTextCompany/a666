@@ -2,6 +2,10 @@
 
 Dokumentation ist hier zu finden: <https://github.com/TheTextCompany/a666/blob/main/dokumentation.pdf>
 
+> [!WARNING]
+> Es wird empfohlen den `TextRenderer` zu benutzen, da `GuiRenderer` nicht funktionsfähig ist.
+> Dieser unterstützt keine Bild- oder Audio-Inhalte, funktioniert jedoch andererseits.
+
 In GitHub kann man keine Links in PDF-Dateien klicken, deshalb ist es zu empfehlen, die Datei herunterzuladen.
 Die Code-Dokumentation (Javadoc) hat zu Merge-Conflicts geführt und muss deshalb lokal erneut generiert werden.
 
