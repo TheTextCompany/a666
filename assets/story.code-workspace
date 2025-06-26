@@ -33,10 +33,16 @@
             "editor.formatOnPaste": true,
             "editor.formatOnSave": true,
             "editor.formatOnType": true,
+            "editor.defaultFormatter": "redhat.vscode-xml",
             "editor.rulers": [
                 100
             ],
+            "editor.wordWrap": "wordWrapColumn",
+            "editor.wordWrapColumn": 100,
         },
+        "xml.format.preserveSpace": [
+            "text"
+        ],
 
         "workbench.sideBar.location": "right",
         "explorer.confirmDelete": true,
@@ -63,6 +69,9 @@
         "zenMode.showTabs": "none",
         "zenMode.silentNotifications": false,
         "telemetry.geriyocoImageGallery.isTelemetryEnabled": false,
+        "github.copilot.enable": {
+            "xml": false
+        },
 
         "peacock.color": "#499167",
         "peacock.affectActivityBar": false,
