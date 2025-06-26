@@ -32,7 +32,7 @@ public class TextRenderer {
         System.out.print("\u000C");
         var f = engine.getFrame(id);
         
-        System.out.println(" == " + f.title + " == ");
+        System.out.println(" == " + f.title + " ==");
         System.out.println("\n" + f.text);
 
         System.out.println("\nOptionen:");
@@ -49,9 +49,7 @@ public class TextRenderer {
 
         Integer enteredId;
         try {
-            GuiRenderer renderer = new GuiRenderer();
-            renderer.render(f);
-            enteredId = GuiRenderer.input;
+            enteredId = (new Scanner(System.in)).nextInt() - 1;
         } catch (Exception e) {
             enteredId = null;
         }

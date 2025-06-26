@@ -10,68 +10,131 @@ import java.awt.*;
 import java.io.*;
 import java.nio.*;
 import java.util.Scanner;
+import static javax.swing.JOptionPane.showMessageDialog;
 /**
  * GUI-Version des Spiels.
  * 
- * @author Kitan, Julian
+ * @author Kitan
+ * @author Julian
  */
 public class GuiRenderer extends JFrame {
-    public JTextField textField;
-    JButton submit;
     File imageFile;
-    static Integer input;
-    public GuiRenderer(){}
+    static Integer enteredId;
+    private FreakEngine engine;
+    private JTextArea textArea;
+    private JTextField inputField;
+
+
+    public GuiRenderer() throws EngineException{
+        //try{
+        engine = new FreakEngine();
+        render(0, null);
+
+        //}
+
+        //catch (Exception e) {
+        //showMessageDialog(null, "Critical error, panicked: " + e.getMessage());
+    } 
+    //}
 
     /** 
      * Fügt eine GUI hinzu. Diese besteht aus einem Text-Feld und einem Bild.
-     * @param frame der zu ladende Frame, wird von Engine übergeben.
+     * @param id die ID des zu ladenden Frames.
+     * @param error eine evlt mögliche Errormeldung.
      */
-    public void render(Frame frame) throws EngineException {
+    private void render(int id, String error) throws EngineException {
+        setLayout(new BorderLayout());
+        Integer input = 0;
+        var frame = engine.getFrame(id);
         handleImage(frame);
-        JFrame backroundFrame = new JFrame(frame.title);
-        backroundFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        backroundFrame.setLayout(null);
-        backroundFrame.setSize(500,500);
-        ImageIcon image = new ImageIcon(imageFile.getAbsolutePath());
-        backroundFrame.add(new JLabel(image));
-
-        textField = new JTextField();
-        textField.setBounds(50, 20, 200, 25);
-        backroundFrame.add(textField);
-
         
-        submit = new JButton("Bestätigen");
-        submit.setBounds(100, 60, 100, 30);
-        backroundFrame.add(submit);
-        submit.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    String userInput = textField.getText();
-                    textField.setText("");
-                    input = Integer.parseInt(userInput);
-                }
-            });
-        backroundFrame.add(submit);
+        // ----------- Image Panel ------------
+         
+        JLabel imageLabel = new JLabel(); 
+        ImageIcon imageIcon = new ImageIcon("your_image.jpg");
+        imageLabel.setIcon(imageIcon); 
+        JPanel imagePanel = new JPanel(); 
+        imagePanel.add(imageLabel);
+        
+        // ----------- Text Area Panel ------------
+        
+        StringBuilder options = new StringBuilder("\n\n\n\n Options:"); 
+        for (int i = 0; i < frame.options.size(); i++){
+            options.append( i + ");\n");
+        }
+        
+        textArea = new JTextArea("==" + frame.title + "==\n" + frame.text + options);
+        textArea.setLineWrap(true);      // Für Zeilenumbruch
+        textArea.setEditable(false);
+        setSize(500,500);
+        JPanel textPanel = new JPanel(); 
+        
+        // ----------- Input Panel ------------
+        
+        inputField = new JTextField(1);
+        JButton confirmButton = new JButton("Bestätigen");
 
-        if (frame.sound.isPresent()) {
-            File fileWav = frame.sound.get();
-            SoundRenderer renderer = new SoundRenderer(fileWav);
-            renderer.renderWav();
+        confirmButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String UserInput = inputField.getText();
+                inputField.setText("");
+                Integer input = Integer.parseInt(UserInput);
+            }
+        });
+        
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.X_AXIS));
+        inputPanel.add(inputField);
+        inputPanel.add(Box.createRigidArea(new Dimension(10, 0)));
+        inputPanel.add(confirmButton);
+        
+        // ------------ Layout anpassen ------------
+        
+        add(imagePanel, BorderLayout.NORTH);
+        add(textPanel, BorderLayout.CENTER);
+        add(inputPanel, BorderLayout.SOUTH);
+        
+        // ------------ Fertigstellen ------------
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null); // Fenster im Zentrum
+        pack();
+        setSize(2000, 1000);
+        setVisible(true);
+        
+        
+            
+            if (error != null) {
+                showMessageDialog(null, error);
+                setVisible(false);
+                dispose();
+            }
 
-        }   
-    }
+            try {
+                enteredId = input;
+            } catch (Exception e) {
+                enteredId = null;
+            }
+
+            if (enteredId == null || enteredId < 0 || enteredId >= frame.options.size()) {
+                render(id, "Ungültige Eingabe.");
+                setVisible(false);
+                dispose();
+            }
+
+            render(frame.options.get(enteredId).to, null);
+        }
+
     
+
     /**
      * Überprüft ob ein Bild im Frame vorhanden ist und passt dementsprechend das zu rendernde Bild an.
      * @param frame der aktuelle Frame, welcher zu rendern ist.
      */
     private void handleImage(Frame frame) {
-        if (frame.image.isPresent()){
+        if (frame.image.isPresent() == true) {
             imageFile = frame.image.get();
-            return ;
         }
-
-        else {
-            return ;   
-        }
+        return ;
     }
 }

@@ -3,34 +3,158 @@
     <summary>Du findest ein mysteriöses Logbuch in deinem Spind</summary>
     <sound src="bg.mp3" />
 
-    <imports>
+    <!-- <imports>
         <import src="e1.xml" />
-    </imports>
+    </imports> -->
 
     <characters>
-        <character id="max" name="Max" summary="Demo Charakter" presentedIn="2" />
+        <character id="finn" name="Finn" summary="Protagonist – Schüler des GFS" />
+        <character id="narrator" name="???" summary="Der Erzähler der Geschichte" />
+        <character id="kuntke" name="Frau Kuntke" summary="Klassenleiterin" />
+        <character id="paul" name="Paul" summary="Der, dessen Namen nicht genannt werden darf" />
     </characters>
 
     <frames>
         <frame id="0" author="Jakob">
             <title>A666</title>
             <text>
-                Title screen
+                Du bist mit deiner Familie umgezogen – neue Schule, neues Glück. Doch nicht alles ist so, wie es scheint. Etwas ist seltsam. Dir fallen immer wieder komische Dinge auf. Dinge, die dich in ihren Bann ziehen.
             </text>
-            <image src="0.png" />
+            <image src="../image/img85.jpg" />
             <options>
-                <option to="1" style="greyed shining shaking" default="default">Start</option>
+                <option to="1" style="shining" default="default">Start</option>
             </options>
         </frame>
-        <frame id="1" flag="test">
-            <title>The Beginning<if flag="test"> – I've Played These Games Before!!1!</if></title>
+        <frame id="1">
+            <title>Erster Tag</title>
             <text>
-                Once upon a time, in a land far away, <cr id="max" /> ...
+                Da stehe ich nun, vor dem Gymnasium Fränkische Schweiz. Die Luft ist dicht, Nebel liegt tief. Anfang September bin ich das nicht gewöhnt. Gut, in der Stadt, wo ich herkomme, gibt es nie dergleichen, also ist es wohl eher die bloße Präsenz der Nebelschwaden, die mich verwundert.
             </text>
-            <image src="1.png" />
-            <sound src="1.mp3" />
+            <image src="../image/img89.jpg" />
             <options>
                 <option to="2">Weiter</option>
+            </options>
+        </frame>
+        <frame id="2">
+            <title>Erster Tag – Merkwürdige Statuen</title>
+            <text>
+                Ich betrete das Gebäude. Gleich rechts neben dem Eingang erblicke ich drei Statuen. Hier soll mich jetzt meine neue Klassenleiterin abholen – scheinbar ein Bonus für Neue, wie mich. <cr id="kuntke" /> heißt sie.
+            </text>
+            <image src="../image/img72.jpg" />
+            <options>
+                <option to="3">Weiter</option>
+            </options>
+        </frame>
+        <frame id="3">
+            <title>Erster Tag – Unterricht</title>
+            <text>
+                <cr id="kuntke" /> kommt und holt mich ab. Wir betreten die Klasse zusammen, ich bleibe wie angewurzelt im Türrahmen stehen. Alle starren mich an. Einer flüstert: „Wer ist der denn?“ Kein sehr schönes Willkommen. <cr id="kuntke" display="Die Lehrerin" /> setzt mich neben einen anderen Schüler – er ignoriert mich.
+            </text>
+            <image src="../image/img17.jpg" />
+            <options>
+                <option to="4">Weiter</option>
+            </options>
+        </frame>
+        <frame id="4">
+            <title>Erster Tag – Freistunde</title>
+            <text>
+                <if flag="Mediathek"><else />Ich verlasse das Klassenzimmer. Die Erfahrung hätte besser sein
+                    können, aber ich werde bestimmt noch viele nette Menschen hier kennenlernen.
+                    Jeder Anfang ist schwer.</if><br />Ich habe <if flag="Mediathek">immer noch </if>eine <if flag="Mediathek">halbe </if>Freistunde<if flag="Mediathek">
+                    übrig</if>. Wie in den letzten Jahren habe ich auch in diesem wieder einen Spind. Das heißt, ich könnte diesen jetzt einräumen. <if flag="Mediathek"><else />Alternativ könnte ich mich auch in der Mediathek über
+                    die Dinge an der Schule schlau machen. Dann finde ich vielleicht auch endlich
+                    ein gutes Gesprächsthema.</if>
+            </text>
+            <options>
+                <option to="6">Spind geht vor</option>
+                <option to="5" unlessFlag="Mediathek">Mediathek ruft!</option>
+            </options>
+        </frame>
+        <frame id="5" flag="Mediathek">
+            <title>Erster Tag – Mediathek</title>
+            <text>
+                Ok, gut. Also: Was könnte ich suchen? Erstmal vielleicht den Namen der Schule selbst, dann erfahre ich vielleicht, was Schüler vor mir schon erlebt haben.<br />Jugend Forscht, ein paar Wettbewerbe, …<br />Oh, was ist das? Ein Mysterium mit übermenschlichen Verbindungen zu unbegreiflichen Wesen? Humbug.
+            </text>
+            <image src="../image/img36.jpg" />
+            <options>
+                <option to="4">Immer noch Freistunde?</option>
+            </options>
+        </frame>
+        <frame id="6">
+            <title>Erster Tag – Spinde</title>
+            <text>
+                <if flag="Mediathek"><else />Naja, schlau machen kann ich mich auch noch später. Der Spind geht
+                    jetzt vor, bevor ich mir den Rücken breche.</if><br />Hier sind sie schon. Ich hab den Spind Nummer ‚1236663‘. Ah, da ist er ja. Pin noch eingeben – fertig.<br />Nanu, hier liegt ein Büchlein.
+            </text>
+            <image src="../image/img73.jpg" />
+            <options>
+                <option to="7">Nanu?</option>
+            </options>
+        </frame>
+        <frame id="7">
+            <title>Erster Tag – Spinde</title>
+            <text>
+                Es scheint einen Ledereinband zu haben. Vorne kann man eine Inschrift „A666“ ausmachen. <if flag="Mediathek">Das wird doch nichts mit der Geschichte über mysteriöse Mysterien zu tun
+                    haben, dich ich vorhin entdeckt hab? Nein, nein, nein. Jetzt fange ich auch
+                    schon an. </if>Sollte ich es behalten, oder lieber ans Sekretariat ausliefern?
+            </text>
+            <image src="../image/img90.jpg" />
+            <options>
+                <option to="8">Angeben im Sekretariat</option>
+                <option to="10">Vielleicht doch spitzen</option>
+            </options>
+        </frame>
+        <frame id="8">
+            <title>Erster Tag – Sekretariat</title>
+            <text>
+                Es gehört mir schließlich nicht, nur weil es in meinem Spind liegt. Ich sollte es besser schnell abgeben.<br />Die Sekretärin, der ich versuche das Buch in die Hand zu drücken, scheint desinteressiert und würdigt des Buches keinen Blickes. Sie legt es zu anderen Fundsachen, schmeißt ein leises Danke mir hinterher und widmet sich wichtigeren Dingen.<br />Ich schließe die Tür hinter mir. Nicht mehr mein Problem, richtig? Der Besitzer wird sich über das Auftauchen seines Buches sicher freuen.
+            </text>
+            <image src="../image/img66.jpg" />
+            <options>
+                <option to="9">Weiter</option>
+            </options>
+        </frame>
+        <frame id="9">
+            <title>Erster Tag – Ende</title>
+            <text>
+                „Der Besitzer wird sich über das Auftauchen seines Buches sicher freuen“, überlegte sich <cr id="finn" />.<br />Seine Arbeit war getan, er ging seinem inneren Drang nach, das Rechte zu tun. Nicht länger war es sein Problem, welch furchtbares Geheimnis sich in den tiefsten Gemäuern des Anstaltsgebäudes befand.<br />Das einzige, was ihn in diesem Moment kümmerte, war der Inhalt des kargen Alltags, der einzigen Bestimmung, welche ihn in diesem Moment in Sicht war. Tag ein, Tag aus führte er bis ans Ende seiner Tage die eintönigen Arbeit aus, die ihm von höherer Stelle zugewiesen wurde.<br />~ Gezeichnet, <cr id="narrator" />
+            </text>
+            <image src="../image/img77.jpg" />
+            <options>
+                <option to="0">Ende</option>
+            </options>
+        </frame>
+        <frame id="10">
+            <title>Erster Tag – Geheimnisvolles Buch</title>
+            <text>
+                Ich öffne das Buch. Bei Durchblättern fällt mir aus, dass der Text keinen Sinn zu  ergeben scheint. Doch die erste Seite scheint lesbar:
+
+                ~             A666               ~
+                ~                                ~
+                ~ Seit  gegrüßt,  werter  Leser. ~
+                ~ Dies  sind  die  Memoiren  des ~
+                ~ Pauls.  Fahre fort,  wende die ~
+                ~ Seite und lerne die Geheimnis- ~
+                ~ se des Hauses kennen!          ~
+                ~                                ~
+                ~        MRGAHK TOKSGTJKS        ~
+                ~     VGAR OYZ KOTK ORRAYOUT     ~
+
+                Klingt mysteriös. <if flag="Mediathek">Oh nein, schon wieder mysteriöse Mysterien. Sie holen mich ein. </if>Gerade konnte ich aber nichts erkennen. Warum also jetzt? Ich könnte das Ding immer noch abgeben.
+            </text>
+            <image src="../image/img91.jpg" />
+            <options>
+                <option to="8">Viel zu creepy, weg damit</option>
+                <option to="9999">Interessant, einpacken</option>
+            </options>
+        </frame>
+        <frame id="9999">
+            <title>Demo Ende</title>
+            <text>
+                (*O*) Vielen Dank für’s Spielen unserer kleinen Demo! (^u^)<br />Wir würden uns wahnsinnig über Feedback bezüglich unseres Spieles freuen. Die Story ist zum aktuellen Zeitpunkt noch etwas kurz gehalten („etwas“), ja, aber der Wille zählt. Eigentlich sollte sie um einiges länger werden, doch wegen zeitlichen Problemen hat sich kein Zeitslot für das Schreiben dieser entwickelt. Eventuell werden wir in Zukunft noch einige Verbesserungen und Fortsetzungen vornehmen.<br />~ Stolz entwickelt von Jakob, Julian und Kitan!
+            </text>
+            <options>
+                <option to="0">Ende</option>
             </options>
         </frame>
     </frames>
