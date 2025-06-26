@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author Jakob
  */
 public class FreakEngine {    
-    final Routine r;
+    final Routine routine;
     final ArrayList<String> flags = new ArrayList<>();
     String nextFlag;
     
@@ -30,7 +30,7 @@ public class FreakEngine {
         }
         
         try {
-            r = Interpreter.loadRoutine(assets);
+            routine = Interpreter.loadRoutine(assets);
         } catch (Exception e) {
             throw new EngineException("Failed to initialize engine: " + e.getMessage());
         }
@@ -44,7 +44,7 @@ public class FreakEngine {
      * @throws EngineException Wird geschmissen, sollte der {@link Frame} nicht existieren.
      */
     public Frame getFrame(int id) throws EngineException {
-        for (var i : r.frames) {
+        for (var i : routine.frames) {
             if (id == i.id) {
                 if (nextFlag != null) {
                     flags.add(nextFlag);
