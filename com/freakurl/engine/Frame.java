@@ -143,11 +143,16 @@ public class Frame {
                 var idAttribute = node.getAttributes().getNamedItem("id");
                 String id = (idAttribute != null) ? idAttribute.getTextContent() : null;
                 
+                var displayAttribute = node.getAttributes().getNamedItem("display");
+                String display = (displayAttribute != null) ? displayAttribute.getTextContent() : null;
+                
                 try {
-                    tmp.append(CharacterManager.getCharacter(id).name);
+                    tmp.append((display != null) ? display : CharacterManager.getCharacter(id).name);
                 } catch (Exception e) {
-                    tmp.append("Unknown Character");
+                    tmp.append((display != null) ? display : "Unknown Character");
                 }
+            } else if ("br".equals(node.getNodeName())) {
+                tmp.append("\n\n");
             } else if ("if".equals(node.getNodeName())) {
                 var ifNodes = node.getChildNodes();
                 
@@ -172,7 +177,35 @@ public class Frame {
             }
         }
         
-        return tmp.toString().trim();
+        var res = new StringBuilder("");
+        
+        for (var i : tmp.toString().split("\n\n")) {
+            var line = new StringBuilder("");
+            if (i.trim().startsWith("~")) {
+                for (var j : i.trim().split("\n")) {
+                    res.append("\n‎" + j.trim());
+                }
+                res.append("\n");
+                continue;
+            }
+            for (var j : i.split(" ")) {
+                if (!j.trim().isEmpty()) {
+                    final String newLine = line.toString() + (line.toString().isEmpty() ? "" : " ") + j.trim();
+                    if (newLine.length() >= 72) {
+                        final String prodLine = line.toString();
+                        res.append("\n" + prodLine);
+                        line = new StringBuilder("");
+                        line.append(j.trim());
+                    } else {
+                        line.append((line.toString().isEmpty() ? "" : " ") + j.trim());
+                    }
+                }
+            }
+            res.append("\n" + line.toString() + "\n");
+        }
+
+        
+        return res.toString().trim();
     }
     
     Frame copyWithFlags(ArrayList<String> flags) {

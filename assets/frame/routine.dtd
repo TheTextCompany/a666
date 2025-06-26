@@ -1,15 +1,16 @@
 <!-- ROUTINE DTD Definition -->
 <!-- Schwierig zu verstehen, besser nicht anfassen -->
 
+<!-- @Jakob -->
+
 <!ELEMENT sound EMPTY>
 <!ATTLIST sound src CDATA #REQUIRED>
 <!ELEMENT image EMPTY>
 <!ATTLIST image src CDATA #REQUIRED>
 
 <!ELEMENT if (#PCDATA | else)*>
-<!ATTLIST if
-    flag CDATA #REQUIRED>
-<!ELEMENT else (#PCDATA)>
+<!ATTLIST if flag CDATA #REQUIRED>
+<!ELEMENT else EMPTY>
 
 <!ELEMENT routine (summary, sound?, imports?, characters?, frames)>
 <!ELEMENT summary (#PCDATA)>
@@ -34,11 +35,14 @@
     flag CDATA #IMPLIED>
 
 <!ELEMENT title (#PCDATA | if)*>
-<!ELEMENT text (#PCDATA | cr | if)*>
+<!ELEMENT text (#PCDATA | cr | br | if)*>
 <!ELEMENT options (option+)>
 
 <!ELEMENT cr EMPTY>
-<!ATTLIST cr id CDATA #REQUIRED>
+<!ATTLIST cr
+    id CDATA #REQUIRED
+    display CDATA #IMPLIED>
+<!ELEMENT br EMPTY>
 
 <!ELEMENT option (#PCDATA)>
 <!ATTLIST option
