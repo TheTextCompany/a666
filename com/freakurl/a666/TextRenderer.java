@@ -1,0 +1,80 @@
+package com.freakurl.a666;
+
+import java.util.Scanner; 
+
+import com.freakurl.engine.FreakEngine;
+import com.freakurl.engine.EngineException;
+
+/**
+ * Text-only-Version des Spiels.
+ * 
+ * @author Kitan
+ */
+public class TextRenderer {
+    FreakEngine engine;
+
+    public TextRenderer() {
+        try {
+            engine = new FreakEngine();
+            render(0, null);
+        } catch (Exception e) {
+            System.out.println("Critical error, panicked: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Gibt einen Frame mit der gegebenen ID aus.
+     * 
+     * @param id Die angeforderte ID.
+     * @param error Wenn nicht {@code null}, ein Fehler, welcher von dem Eingabefeld angezeigt wird.
+     */
+    public void render(int id, String error) throws EngineException {
+        System.out.print("\u000C");
+        var f = engine.getFrame(id);
+        
+        System.out.println(" == " + f.title + " == ");
+        System.out.println("\n" + f.text);
+
+        System.out.println("\nOptionen:");
+        
+        for (int i = 0; i < f.options.size(); i++) {
+            System.out.println(" " + (i + 1) + ") " + f.options.get(i).body);
+        }
+
+        System.out.println(""); 
+        if (error != null) {
+            System.out.println("> " + error);
+        }
+        System.out.print("> ");
+
+        Integer enteredId;
+        try {
+            GuiRenderer renderer = new GuiRenderer();
+            renderer.render(f);
+            enteredId = GuiRenderer.input;
+        } catch (Exception e) {
+            enteredId = null;
+        }
+        
+        if (enteredId == null || enteredId < 0 || enteredId >= f.options.size()) {
+            render(id, "Ungültige Eingabe.");
+        }
+
+        render(f.options.get(enteredId).to, null);
+    }
+
+    public static void main(String[] args) {
+        new TextRenderer();
+    }   
+    /**
+    public static final String ANSI_RESET = "\u001B[0m";
+    //zum reseten der Farbe
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_RED = "\u001B[31m";
+    //weitere Farben möglich
+     */
+}
+

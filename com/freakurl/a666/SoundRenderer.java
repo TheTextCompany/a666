@@ -14,19 +14,20 @@ import java.awt.event.*;
  */
 public class SoundRenderer {
     private Clip clip;
-
-    public SoundRenderer(){}
+    private File sound;
+    public SoundRenderer(File sound){
+        this.sound = sound;
+    }
 
     native int play_mp3(char[] file_path);
-
     /**
      * Lädt die DLL, konvertiert den MP3-Dateipfad und übergibt diesen der play_mp3-Funktion.
      * 
      * @param fileMp3 Der Dateipfad der abzuspielenden MP3-Datei.
      */
-    public void renderMp3(File fileMp3) {
+    public void renderMp3() {
         System.loadLibrary("sound_renderer_win.dll");
-        String filePathMp3 = fileMp3.getAbsolutePath();
+        String filePathMp3 = sound.getAbsolutePath();
         char[] filePathArr = new char[filePathMp3.length() + 1];
         filePathArr = filePathMp3.toCharArray();
         filePathArr[filePathMp3.length() + 1] = '\0';
@@ -39,13 +40,13 @@ public class SoundRenderer {
      * @param fileWav ein File-Objekt einer WAV-Datei.
      * @throws EngineException Wird geschmissen, wenn die WAV-Datei nicht abgespielt werden konnte.
      */
-    public void renderWav(File fileWav) throws EngineException {
+    public void renderWav() throws EngineException {
         try {
             if(clip != null && clip.isRunning()) {
                 clip.stop();
             }
 
-            AudioInputStream stream = AudioSystem.getAudioInputStream(fileWav);
+            AudioInputStream stream = AudioSystem.getAudioInputStream(sound);
             clip = AudioSystem.getClip();
             clip.open(stream);
             clip.setFramePosition(0);
